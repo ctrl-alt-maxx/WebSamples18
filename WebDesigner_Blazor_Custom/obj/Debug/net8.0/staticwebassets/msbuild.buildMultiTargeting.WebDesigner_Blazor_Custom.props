@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebDesigner_Blazor_Custom.props" />
+</Project>

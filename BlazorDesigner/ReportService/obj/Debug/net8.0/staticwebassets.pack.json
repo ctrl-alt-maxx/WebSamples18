@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\maxxr\\Documents\\GitHub\\WebSamples18\\BlazorDesigner\\ReportService\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\maxxr\\Documents\\GitHub\\WebSamples18\\BlazorDesigner\\ReportService\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ReportService.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ReportService.props",
+      "PackagePath": "build\\ReportService.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ReportService.props",
+      "PackagePath": "buildMultiTargeting\\ReportService.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ReportService.props",
+      "PackagePath": "buildTransitive\\ReportService.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "RGBxB9QOdxkMyBy6zNKGmz667ZQKfpQtSvZ/RIFJP4k=",
+  "Source": "WebDesigner_Blazor",
+  "BasePath": "_content/WebDesigner_Blazor",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebDesigner_Blazor\\wwwroot",
+      "Source": "WebDesigner_Blazor",
+      "ContentRoot": "C:\\Users\\maxxr\\Documents\\GitHub\\WebSamples18\\WebDesigner_Blazor\\wwwroot\\",
+      "BasePath": "_content/WebDesigner_Blazor",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

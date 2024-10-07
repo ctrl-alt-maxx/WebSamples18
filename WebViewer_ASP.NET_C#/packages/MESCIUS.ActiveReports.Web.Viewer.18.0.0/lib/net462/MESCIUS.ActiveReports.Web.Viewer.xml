@@ -1,0 +1,1014 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MESCIUS.ActiveReports.Web.Viewer</name>
+    </assembly>
+    <members>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.DataProviderInfo">
+            <summary>
+            Holds information required for initializing an instance of referenced Data Provider.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.DataProviderInfo.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes new instance of the <see cref="T:GrapeCity.ActiveReports.Web.Viewer.DataProviderInfo"/> struct.
+            </summary>
+            <param name="invariantName">Initial value for <see cref="F:GrapeCity.ActiveReports.Web.Viewer.DataProviderInfo.InvariantName"/>.</param>
+            <param name="assemblyQualifiedName">Initial value for <see cref="F:GrapeCity.ActiveReports.Web.Viewer.DataProviderInfo.AssemblyQualifiedName"/>.</param>
+            <param name="adapterAssemblyQualifiedName">Initial value for <see cref="F:GrapeCity.ActiveReports.Web.Viewer.DataProviderInfo.AdapterAssemblyQualifiedName"/>.</param>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Viewer.DataProviderInfo.InvariantName">
+            <summary>
+            The name that can be used to refer to the data provider in reports.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Viewer.DataProviderInfo.AssemblyQualifiedName">
+            <summary>
+            Fully assembly-qualified name of the class that implements <see cref="T:System.Data.Common.DbProviderFactory"/> for this provider.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Viewer.DataProviderInfo.AdapterAssemblyQualifiedName">
+            <summary>
+            Fully assembly-qualified name of the class that implements additional features like setting of multivalue parameters and others.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.ErrorInfo">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.ExceptionExtension">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ExceptionExtension.GetErrorInfo(System.Exception)">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.Implementation.DocumentsStore">
+            <summary>
+            Stores snapshots, rendering results in memory.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.Implementation.DocumentTask">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.Implementation.RenderTask">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.Implementation.Id`1">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.Implementation.JsonConverters.JsonOptions">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Viewer.Implementation.JsonConverters.JsonOptions.JsonSerializerOptions">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.Implementation.Page.RdlDocument.Parameters">
+            <summary>
+            Required to rebuild data tree when sorting applied.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.Implementation.Page.RdlToHtmlRenderTask">
+            <summary> Represents RDL -> HTML render view task. </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.Implementation.Page.RdlToSvgRenderTask">
+            <summary> Represents RDL -> SVG render view task (used for Galley mode only). </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.Implementation.Page.RdlToSvgStreamingRenderTask">
+            <summary> Represents RDL -> SVG render view task. </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.Implementation.Section.SvgExport">
+            <summary> Svg export implementation for Section Reports </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.ReportService">
+            <summary>
+            Allows to get reports and their resources using callback functions.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Viewer.Licensing.License.EvaluationNoticePro">
+            <summary>
+            These properties will be called from Ar.core using reflection
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.Licensing.License.GetLicenseLevel">
+            <summary>
+            This method called from ar.core using reflection.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.Licensing.License.CheckLicense(System.Boolean)">
+            <summary>
+            Checks the current license and throws <see cref="T:GrapeCity.ActiveReports.Web.Viewer.Licensing.WebViewerLicenseException"/> if the license is not valid.
+            </summary>
+            <exception cref="T:GrapeCity.ActiveReports.Web.Viewer.Licensing.WebViewerLicenseException">Throw if the license is not applicable to running application.</exception>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Viewer.Licensing.WebViewerLicenseException.Code">
+            <summary>
+            License error code;
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.LocateDataSourceArgs">
+            <summary>
+            Provides data(include ReportParameters) for the DataProviders used in DataTreeBuilder.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.LocateDataSourceArgs.DataSet">
+            <summary>
+            Gets the report's <see cref="T:GrapeCity.ActiveReports.PageReportModel.IDataSet"/> object to locate data for.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.LocateDataSourceArgs.Report">
+            <summary>
+            Gets the <see cref="T:GrapeCity.ActiveReports.PageReportModel.Report"/> for which is trying to locate the data set.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.LocateDataSourceArgs.Parameters">
+            <summary>
+            Gets the Parameters collection specified for a given report instance.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.LocateDataSourceArgs.ReportParameters">
+            <summary>
+            Gets the ReportParameters collection specified for a given report instance.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.LocateDataSourceArgs.#ctor(System.Collections.Generic.IReadOnlyList{GrapeCity.Enterprise.Data.DataEngine.DataProcessing.DataParameter},System.Collections.Generic.IReadOnlyList{GrapeCity.Enterprise.Data.DataEngine.DataProcessing.DataParameter},GrapeCity.ActiveReports.PageReportModel.Report,GrapeCity.ActiveReports.PageReportModel.IDataSet)">
+            <summary>
+            Creates a new instance of the <see cref="T:GrapeCity.ActiveReports.Web.Viewer.LocateDataSourceArgs"/> class.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.ReportNotFoundException">
+            <summary>
+            Occurs when IReportService can't find the report with the specified identifier.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration">
+            <summary>
+            ReportViewer middleware configuration
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseFileStore(System.IO.DirectoryInfo)">
+            <summary>
+            Use builtin file store for report files and resources.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseEmbeddedTemplates(System.String,System.Reflection.Assembly)">
+            <summary>
+            Use embedded resources for report files and resources.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseCodeBasedSectionReports(System.Reflection.Assembly,System.String)">
+            <summary>
+            Code-based reports that are stored in the assembly.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseReportProvider(GrapeCity.ActiveReports.Web.Viewer.IReportProvider)">
+            <summary>
+            Use custom report store provider.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseReportProvider(GrapeCity.ActiveReports.Web.Viewer.GetReportFn,GrapeCity.ActiveReports.Web.Viewer.GetReportDescriptorFn)">
+            <summary>
+            Use custom simplistic provider.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseResourceProvider(GrapeCity.ActiveReports.Web.Viewer.IReportResourceProvider)">
+            <summary>
+            Use custom resources provider.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseResourceProvider(GrapeCity.ActiveReports.Web.Viewer.GetResourceFn)">
+            <summary>
+            Use custom resource provider.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseConfig(System.String)">
+            <summary>
+            Use custom config file path (`Assembly.GetEntryAssembly().Location` is default).
+            </summary>
+            <param name="path">Path to config file.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseConfig(GrapeCity.ActiveReports.Configuration.IConfigurationProvider)">
+            <summary>
+            Use custom config provider. Important for fonts file - so customer can generate config based on
+            See <a href="https://learn.microsoft.com/en-us/dotnet/api/system.web.httpserverutility.mappath?view=netframework-4.8"/>
+            and <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.hosting.ihostenvironment.contentrootpath?view=dotnet-plat-ext-6.0"/>.
+            </summary>
+            <param name="provider">Config provider.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseFontResolver(GrapeCity.ActiveReports.IFontResolver)">
+            <summary>
+            Specifies font resolver for all situations.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseCacheDataStorage(System.Action{GrapeCity.ActiveReports.Web.Viewer.CacheDataSettings})">
+            <summary>
+            Cache data settings.
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.UseDataProviders(GrapeCity.ActiveReports.Web.Viewer.DataProviderInfo[])">
+            <summary>
+            Adds custom data provider info
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.LocateDataSource">
+            <summary>
+            Data source locator handler, which included ReportParameters.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.ProcessHyperlink">
+            <summary>
+            Hyperlinks preprocessor if necessary.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.ResolveCredentials">
+            <summary>
+            Sets or gets credentials resolving handler.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration.Prefix">
+            <summary>
+            Web API endpoint prefix.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.ReportViewerSettings">
+            <summary>
+            Report viewer settings
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.ReportViewerSettings.Prefix">
+            <summary>
+            Web API endpoint prefix.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.ReportViewerSettings.CacheDataSettings">
+            <summary>
+            Cache data settings
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.ReportViewerSettings.DataProviders">
+            <summary>
+            Custom data providers
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.CacheDataSettings">
+            <summary>
+            Cache data settings
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.CacheDataSettings.CacheDataPath">
+            <summary>
+            The path to cache data on disk. If set, cache data will be stored at this location.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.CacheDataSettings.UseCompression">
+            <summary>
+            Compress cache data before storing it in memory/disk.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.CacheDataSettings.UseDisk(System.IO.DirectoryInfo,System.Boolean)">
+            <summary>
+            Store cache data on disk to reduce memory consumption.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.CacheDataSettings.UseMemory(System.Boolean)">
+            <summary>
+            Store cache data in memory.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.Services.IRenderingService">
+            <summary>
+            Service that used to render and export reports. 
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.Services.IRenderingService.Export(System.Object,System.IO.Stream,GrapeCity.ActiveReports.Web.Viewer.Services.ExportSettings,System.Threading.CancellationToken)">
+            <summary>
+            Export to specified format
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.Services.IRenderingService.RenderView(System.Object,System.Func{GrapeCity.ActiveReports.Core.Export.Html.Page.HtmlStreamInfo,GrapeCity.ActiveReports.Core.Export.Html.Page.HtmlStream},GrapeCity.ActiveReports.Web.Viewer.Services.ExportSettings,System.Action,System.Threading.CancellationToken)">
+            <summary>
+            Renders document to html using streaming mode
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.Services.IRenderingService.RenderDocument(System.Object,GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.RenderSettings,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+            Renders document that can be used for rendering of views or for export.
+            </summary>
+            <param name="report">Report definition to create document from.</param>
+            <param name="renderSettings">Rendering settings.</param>
+            <param name="cancel">Token that can be triggered outside to cancel the rendering.</param>
+            <returns>Rendered document.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.Services.IRenderingService.GetReportInfo(System.Object)">
+            <summary>
+            Gets the report's basic information. 
+            </summary>
+            <param name="report"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.Services.IRenderingService.ParameterValues(System.Object,System.String[],System.Collections.Generic.Dictionary{System.String,System.Object[]})">
+            <summary>
+            Gets the parameters values.
+            </summary>
+            <param name="report">Report to get parameters values from.</param>
+            <param name="parameters">Parameters names to get info for.</param>
+            <param name="parametersValues">Specified parameters values.</param>
+            <returns>Rendered document.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.Services.IRenderingService.ParameterValues(System.Object,System.String[],System.Collections.Generic.Dictionary{System.String,System.String[]},System.Collections.Generic.Dictionary{System.String,System.Object[]})">
+            <summary>
+            Gets the parameters values.
+            </summary>
+            <param name="report">Report to get parameters values from.</param>
+            <param name="parameters">Parameters names to get info for.</param>
+            <param name="parametersFields">Specified parameters fields.</param>
+            <param name="parametersValues">Specified parameters values.</param>
+            <returns>Rendered document.</returns>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Viewer.Services.ReportInfo.Exports">
+            <summary>
+            Export types available for a given report.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.Services.ExportSettings">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Viewer.Services.ExportSettings.ContentInline">
+            <summary>
+            Tells that the content-disposition header have to be 'inline'.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Viewer.Services.ExportSettings.DisposeDocumentAfterExport">
+            <summary>
+             If <c>true</c> the document will disposed after the exported file is ready.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.Services.NameValueCollectionExtensions.MapPdfExportOptionsForRE(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Map WebViewer's PdfExportOptions settings to RE's settings.
+            See details here: https://wiki.grapecity.io/x/vZQ7Qw
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.IReportProvider">
+            <summary>
+            Report provider
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.IReportProvider.GetReport(System.String)">
+            <summary>
+            Gets the report stream in the format compatible with backend.
+            </summary>
+            <param name="reportId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.IReportProvider.GetReportDescriptor(System.String)">
+            <summary>
+            Get ReportDescriptor with information about report
+            </summary>
+            <param name="reportId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.ReportDescriptor">
+            <summary>
+            Information about report
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.IReportResourceProvider">
+            <summary>
+            Report resource provider
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Viewer.IReportResourceProvider.GetResource(GrapeCity.ActiveReports.ResourceInfo)">
+            <summary>
+            Gets the resource stream in the format compatible with backend.
+            </summary>
+            <param name="resource"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.IReportViewerBackendApi">
+            <summary>
+            Full report viewer configuration
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.IReportViewerBackendApi.ConfigurationProvider">
+            <summary>
+            Use custom config provider.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.IReportViewerBackendApi.FontResolver">
+            <summary>
+            Specifies font resolver for all situations.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.IReportViewerBackendApi.LocateDataSource">
+            <summary>
+            Data source locator handler, which included ReportParameters.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.IReportViewerBackendApi.ProcessHyperlink">
+            <summary>
+            Hyperlinks preprocessor if necessary.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.IReportViewerBackendApi.ResolveCredentials">
+            <summary>
+            Sets or gets credentials resolving handler.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Viewer.IReportViewerBackendApi.Settings">
+            <summary>
+            Report viewer settings
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.ReportType">
+            <summary>
+            Report type
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.GetReportDescriptorFn">
+            <summary>
+            Get report descriptor
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.GetReportFn">
+            <summary>
+            Get report
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Viewer.GetResourceFn">
+            <summary>
+            Get resource
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.IHttpResponse">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.IHeaders">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.CodeBasedService">
+            <summary>
+            Allows to get reports from any source using callback function.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.CustomReportsService">
+            <summary>
+            Allows to get reports from any source using callback function.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.CustomReportsService.ResourceLocatorProvider">
+            <summary>
+            Wrapper class to cover resource locator access for Report.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.CustomReportsService.CustomResourceLocator">
+            <summary>
+            This class extends resource locator functions to work logically in custom store mode
+            (similar to EmbeddedResourceLocator for embed templates mode):
+            1. Call GetReports function to obtain subreports first
+            2. Call parent resource locator otherwise
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.DeflateStreamBuffer.OpenReadDeflate(System.String)">
+            <summary>
+            Returns stream that contains compressed data.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode">
+            <summary>
+            Represents bookmarks tree node
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode.Id">
+            <summary>
+            Gets bookmark id
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode.Name">
+            <summary>
+            Gets bookmark display name
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode.Page">
+            <summary>
+            Gets bookmark page
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode.IsLeaf">
+            <summary>
+            Gets true if node is leaf
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode.Kids">
+            <summary>
+            Gets the nested toc nodes or empty list for leaf node
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode.#ctor(GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.Bookmark)">
+            <summary>
+            Initializes a new instance of the TocTreeNode class
+            </summary>
+            <param name="bookmark"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode.#ctor(GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.Bookmark,System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode})">
+            <summary>
+            Initializes a new instance of the TocTreeNode class
+            </summary>
+            <param name="bookmark"></param>
+            <param name="nodes"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode.Get(System.String)">
+            <summary>
+            Gets the nested toc node
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode.Get(GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.Bookmark)">
+            <summary>
+            Gets the nested toc node
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.TocTreeNode.Add(GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.Bookmark)">
+            <summary>
+            Adds new node into collection
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.FilesStreamBuffer">
+            <summary>
+            The streams storage that uses file system directory to store data.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.FilesStreamBuffer.#ctor(System.IO.DirectoryInfo)">
+            <summary>
+            Creates new files stream buffer.
+            </summary>
+            <param name="root">The root directory where files should be stored.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.FilesStreamBuffer.OpenWrite(System.String)">
+            <summary>
+            Opens file stream for writing.
+            </summary>
+            <param name="name">The name of stream to be written.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.FilesStreamBuffer.OpenRead(System.String)">
+            <summary>
+            Opens file stream to read.
+            </summary>
+            <param name="name">The name of stream to be read.</param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MainFactory">
+            <summary>
+            The factory of the platform dependent services.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MemoryStreamBuffer.CustomMemoryStream">
+            <summary> Allows to write and then multiple read from the same buffer. </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.HeadlessStreamProvider">
+            <summary>
+            StreamProvider implementation that uses <see cref="T:System.Func`2"/> delegate to create and write streams.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.HtmlLinkProvider">
+            <summary>
+            Implements a link provider for HTML format.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.RdlParameters">
+            <summary>
+            Base helper methods for rdl reports rendering to be used in both Core and Full framework rendering services.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.RdlParameters.SortDependentParameters(System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.Core.Rendering.ReportParameters.Parameter},System.Collections.Generic.Stack{GrapeCity.ActiveReports.Core.Rendering.ReportParameters.Parameter},System.Collections.Generic.HashSet{System.String})">
+            <summary>
+            recursive topological sort of the parameters
+            </summary>
+            <param name="reportParameters">Input parameters</param>
+            <param name="sortedParameters">Output parameters, this used the stack because it is best suited for this type of sorting.</param>
+            <param name="hashParameters">Hash for faster searching</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.RdlParameters.ApplyParameters(System.Collections.Generic.IReadOnlyCollection{GrapeCity.ActiveReports.Core.Rendering.ReportParameters.Parameter},System.Collections.Generic.Dictionary{System.String,System.Object[]})">
+            <summary>
+            Applies parameter values to the report.
+            Returns true if all required parameters of the reports are specified.
+            </summary>
+            <param name="reportParameters"></param>
+            <param name="parameterValues"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.RdlParameters.Parse(GrapeCity.ActiveReports.Core.Rendering.ReportParameters.ParameterType,System.Boolean,System.Object)">
+            <summary>
+            Parses the specified string according to parameter type.
+            </summary>
+            <param name="type">The parameter type.</param>
+            <param name="isDateOnly">Actual if dataType is ParameterType.DateTime. Determines whether only Date matters.</param>
+            <param name="paramValue">The string value to parse.</param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.RdlRenderingService">
+            <summary>
+            Provides Pdf, Excel and Html exports based on AR.NET assemblies set.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.RenderingService">
+            <summary>
+            Rendering service that supports both: Section and Page reports.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.RpxRenderingService.OutputHtml.#ctor(System.Func{GrapeCity.ActiveReports.Core.Export.Html.Page.HtmlStreamInfo,GrapeCity.ActiveReports.Core.Export.Html.Page.HtmlStream})">
+            <param name="getStream"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.StreamExtensions.UseMemoryBuffer(System.IO.Stream)">
+            <summary>
+            Creates buffer memory stream. The content will be written to the original stream on Dispose method call.
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.KillTimer`1">
+            <summary>
+            Responsible for the killing of the objects that there are no needs ("KeepAlive" feature).
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes">
+            <summary>
+            Predefined MIME constants.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ImageJpeg">
+            <summary><c>image/jpeg</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ImagePng">
+            <summary><c>image/png</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ImageBmp">
+            <summary><c>image/bmp</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.TextHtml">
+            <summary><c>text/html</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.Mht">
+            <summary><c>mht</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.TextCsv">
+            <summary><c>text/csv</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.TextPlain">
+            <summary><c>text/plain</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ApplicationPdf">
+            <summary><c>application/pdf</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ApplicationExcel">
+            <summary><c>application/vnd.ms-excel</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ApplicationMsWord">
+            <summary><c>application/msword</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ApplicationWord">
+            <summary><c>application/word</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ApplicationJson">
+            <summary><c>application/json</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ApplicationXml">
+            <summary><c>application/xml</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ApplicationOpenXmlSpreadsheet">
+            <summary><c>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ApplicationZip">
+            <summary><c>application/zip</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ImageTiff">
+            <summary><c>image/tiff</c></summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.MimeTypes.ImageSvg">
+            <summary><c>image/svg+xml</c></summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.Tools.Weak`1">
+            <summary>
+            Implements single object cache based on WeakReference
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.GetReportInfo(System.String,GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices)">
+            <summary>
+            Gets the report descriptor by a given report identifier.
+            </summary>
+            <param name="reportId">The report identifier to get descriptor for.</param>
+            <param name="config">The reporting configuration object. Used to find the reports service to get the report from.</param>
+            <returns><see cref="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Response"/> object with report descriptor in JSON format.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.ParameterValuesQuery">
+            <summary>
+            Payload for QueryDataset endpoint
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.ParameterValuesQuery.Values">
+            <summary>
+            Specified parameter values
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.ParameterValuesQuery.Request">
+            <summary>
+            Names of the parameters we need to retrieve the values, validValues for.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.ParameterValuesQuery.RequestFields.Fields">
+            <summary>
+            Specified parameter fields
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.ReportParameterValues(System.String,GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.ParameterValuesQuery,GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices)">
+            <summary>
+            Gets the report parameters values.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.Progress(GrapeCity.ActiveReports.Web.Viewer.Implementation.Id{GrapeCity.ActiveReports.Web.Viewer.Implementation.RenderTask},GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices)">
+            <summary>
+            Gets the progress information about rendering task.
+            </summary>
+            <param name="renderTaskId">Rendering task id to get information about.</param>
+            <param name="config">Rendering services.</param>
+            <returns>Object represents information about current state of rendering task.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.Cancel(GrapeCity.ActiveReports.Web.Viewer.Implementation.Id{GrapeCity.ActiveReports.Web.Viewer.Implementation.RenderTask},GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices)">
+            <summary>
+            Stop rendering task, remove document.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.GetPage(GrapeCity.ActiveReports.Web.Viewer.Implementation.Id{GrapeCity.ActiveReports.Web.Viewer.Implementation.RenderTask},System.Int32,GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices)">
+            <summary>
+            Gets the rendered html page content.
+            </summary>
+            <param name="viewId">The view session identifier to get page from.</param>
+            <param name="pageIndex">The zero-based page index.</param>
+            <param name="config">Reporting configuration object that contains necessary services.</param>
+            <returns><see cref="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Response"/> with html content.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.RenderedDelayed(GrapeCity.ActiveReports.Web.Viewer.Implementation.Id{GrapeCity.ActiveReports.Web.Viewer.Implementation.RenderTask},System.Int32,GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices)">
+            <summary>
+            Gets the page's delayed content.
+            </summary>
+            <param name="viewId">The view session identifier.</param>
+            <param name="pageIndex">The zero-based page index.</param>
+            <param name="config">Reporting configuration object that contains necessary services.</param>
+            <returns><see cref="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Response"/> with json content.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.ExportReport(System.String,System.String,GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.RenderSettings,GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices)">
+            <summary>
+            Renders the report and exports it to the specified format.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.RenderView(GrapeCity.ActiveReports.Web.Viewer.Implementation.Id{GrapeCity.ActiveReports.Web.Viewer.Implementation.DocumentTask},GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.RenderSettings,GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices)">
+            <summary>
+            Renders report from existing snapshot.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.ExportResult(GrapeCity.ActiveReports.Web.Viewer.Implementation.Id{GrapeCity.ActiveReports.Web.Viewer.Implementation.RenderTask},GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices)">
+            <summary>
+            Exports the specified document view to the stream in the specified format. The result will be directly written to the specified response object.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportHandlers.ClearSession(GrapeCity.ActiveReports.Web.Viewer.Implementation.Id{GrapeCity.ActiveReports.Web.Viewer.Implementation.DocumentTask},GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices)">
+            <summary>
+            Removes document and all rendered views.
+            </summary>
+            <param name="documentId">The identifier of the document to be removed.</param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings">
+            <summary>
+            Defines reporting middleware settings.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.UseDataProviders(GrapeCity.ActiveReports.Web.Viewer.DataProviderInfo[])">
+            <summary>
+            Adds custom data provider info
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.UseCodeBasedSectionReports(System.Reflection.Assembly,System.String)">
+            <summary>
+            Custom report store, which allows to use simple class name as report ID.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.UseFileStore(System.IO.DirectoryInfo)">
+            <summary>
+            Use directory as a source of report templates.
+            </summary>
+            <param name="rootPath"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.UseEmbeddedTemplates(System.String,System.Reflection.Assembly)">
+            <summary>
+            Use embedded resources to locate the report templates.
+            </summary>
+            <param name="prefix"></param>
+            <param name="asm"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.UseCustomStore(System.Func{System.String,System.Object})">
+            <summary>
+            Use custom report templates store.
+            </summary>
+            <param name="getReportFn">The function that returns report template for a given report string identifier.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.UseConfig(System.String)">
+            <summary>
+            Use custom config file path (`Assembly.GetEntryAssembly().Location` is default).
+            </summary>
+            <param name="path">Path to config file.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.UseConfig(GrapeCity.ActiveReports.Configuration.IConfigurationProvider)">
+            <summary>
+            Use custom config provider. Important for fonts file - so customer can generate config based on
+            See <a href="https://learn.microsoft.com/en-us/dotnet/api/system.web.httpserverutility.mappath?view=netframework-4.8"/>
+            and <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.hosting.ihostenvironment.contentrootpath?view=dotnet-plat-ext-6.0"/>.
+            </summary>
+            <param name="provider">Config provider.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.StoreTemporaryFilesOnDisk(System.IO.DirectoryInfo)">
+            <summary>
+            Instructs ActiveReports to store temporary files to a disk to reduce memory consumption.
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.StoreTemporaryFilesInMemory">
+            <summary>
+            Instructs ActiveReports to store temporary data to a memory.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.FontResolver">
+            <summary>
+            Specifies font resolver for all situations.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.UseCompression">
+            <summary>
+            Tells ActiveReports to compress temporary data before storing to memory/disk.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.Prefix">
+            <summary>
+            Web API endpoint prefix.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.LocateDataSource">
+            <summary>
+            Sets or gets data source locator handler.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.OnHyperlink">
+            <summary>
+            Hyperlinks preprocessor if necessary.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.SetLocateDataSource(System.Func{GrapeCity.ActiveReports.Web.Viewer.LocateDataSourceArgs,System.Object})">
+            <summary>
+            Sets data source locator handler, which included ReportParameters.
+            </summary>
+            <param name="setLocateDataSource">data source locator handler</param>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings.ResolveCredentials">
+            <summary>
+            Sets or gets credentials resolving handler.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Response">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Response.DeflatedFileStreamResponse.#ctor(System.Func{System.IO.Stream},System.Func{System.IO.Stream},System.String)">
+            <param name="deflatedStream">The stream that contains compressed data.</param>
+            <param name="fallbackStream">The stream that contains uncompressed data. Used if the browser does not support 'deflate' content.</param>
+            <param name="mimeType">Response type</param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.IReportsService">
+            <summary>
+            Allows to load rdl report definition from custom storage.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.IStreamBuffer">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.License.CheckLicense">
+            <summary>
+            Checks viewer backend license.
+            </summary>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.RenderSettings">
+            <summary>
+            Render report payload.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.RenderSettings.Parameters">
+            <summary>
+            Specified parameter values
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.RenderSettings.Settings">
+            <summary>
+            Settings for rendering extensions.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.RenderSettings.InteractiveActions">
+            <summary>
+            Interactive actions.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices">
+            <summary>
+            Allows to configure reporting Web API controller.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices.CreateConfiguration(GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings,System.Boolean,System.Func{System.String,System.String})">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices.CreateReportingServices(GrapeCity.ActiveReports.Web.Viewer.IReportViewerBackendApi,System.Boolean,System.Func{System.String,System.String})">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices.CreateReportingServices(GrapeCity.ActiveReports.Web.Viewer.ReportViewerConfiguration,System.Boolean,System.Func{System.String,System.String})">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices.GetReport(System.String)">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.ViewerException.ErrorCodes">
+            <summary>
+            Possible error codes.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.WebConfigurationProvider">
+            <summary>
+            Implements an <see cref="T:GrapeCity.ActiveReports.Configuration.IConfigurationProvider"/> that gets configuration information from a file in the executable directory.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnetcore.Viewer.WebConfigurationProvider.#ctor(System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:GrapeCity.ActiveReports.Configuration.DefaultConfigurationProvider"/>.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Aspnetcore.Viewer.WebConfigurationProvider.Content">
+            <summary>
+            Returns the xml content of the configuration information.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnet.Viewer.Implementation.Extensions.TocExtensions.ExtractBookmarks(GrapeCity.ActiveReports.Document.SectionDocument)">
+            <summary>
+            Extracts bookmarks from AR document and populates tree
+            </summary>
+            <param name="document">Section document</param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Aspnet.Viewer.Implementation.Extensions.TocExtensions.ExtractBookmarks(GrapeCity.ActiveReports.Extensibility.Rendering.Components.IMetadataDictionary)">
+            <summary>
+            Extracts bookmarks from DDR document and populates tree
+            </summary>
+            <param name="metadata"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

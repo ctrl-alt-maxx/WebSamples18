@@ -1,0 +1,2662 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MESCIUS.ActiveReports.QueryDesigner</name>
+    </assembly>
+    <members>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModel">
+            <summary>
+            Base class for all active (notifies subscriber on state change) models
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModel.PropertyChangedHandler">
+            <summary>
+             Represents the method that will handle the System.ComponentModel.INotifyPropertyChanged.PropertyChanged event raised when a property is changed on a component.
+            </summary>
+        </member>
+        <member name="E:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModel.PropertyChanged">
+            <summary>
+             The event raises when a property is changed on a component.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModel.AddPropertyChanged(System.ComponentModel.PropertyChangedEventHandler)">
+            <summary>
+            Adds the handler for the component property changed event.
+            </summary>
+            <param name="value">The method handler to be added.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModel.RemovePropertyChanged(System.ComponentModel.PropertyChangedEventHandler)">
+            <summary>
+            Removes the handler for the component property changed event.
+            </summary>
+            <param name="value">The method handler to be removed.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModel.SetProperty``1(System.Linq.Expressions.Expression{System.Func{``0}},``0@,``0)">
+            <summary>
+            Sets local variable is case it was changed and raises notification event
+            </summary>
+            <typeparam name="T">property type</typeparam>
+            <param name="propertyGetter">property expression</param>
+            <param name="holder">local variable holding the value</param>
+            <param name="value">the value to be assigned</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModel.SetProperty``1(System.Linq.Expressions.Expression{System.Func{``0}},``0@,``0,System.Action{``0})">
+            <summary>
+            Sets local variable is case it was changed and raises notification event
+            </summary>
+            <typeparam name="T">property type</typeparam>
+            <param name="propertyGetter">property expression </param>
+            <param name="holder">local variable holding the value</param>
+            <param name="value">the value to be assigned</param>
+            <param name="onChangeAction">called after property is really updated</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModel.RaisePropertyChanged(System.String)">
+            <summary>
+            Raises PropertyChangedEventArgs for event supplied
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModel.RaisePropertyChanged``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            Name-safe version of RaisePropertyChanged method
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.IPropertyNotification">
+            <summary>
+            Interfaces model with extended property change event.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.PropertyNotificationEventArgs">
+            <summary>
+            Extends <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> and allows for storing the old and new values of the changed property.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelEx">
+            <summary>
+            Base class for models with extended property change event.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelEx.RaisePropertyChanged(System.String,System.Object,System.Object)">
+            <summary>
+            Raises PropertyChangedEventArgs for event supplied
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelEx.RaisePropertyChanged``1(System.Linq.Expressions.Expression{System.Func{``0}},``0,``0)">
+            <summary>
+            Name-safe version of RaisePropertyChanged method
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelExExtensions">
+            <summary>
+            Implements notification propagation helpers
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelExExtensions.Listen``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action{``0,``1,``1})">
+            <summary>
+            Performs specific action on particular property change
+            </summary>
+            <returns>IDisposable instance that unsibscribes events on Dispose</returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions">
+            <summary>
+            Implements notification propagation helpers
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.Listen``1(``0,System.Action{System.String})">
+            <summary>
+            Listens to any property changes
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <param name="model"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.Listen``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action)">
+            <summary>
+            Performs specific action on particular property change
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="model"></param>
+            <param name="getter1"></param>
+            <param name="action"></param>
+            <returns>IDisposable instance that unsibscribes events on Dispose</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.Listen``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action{``0})">
+            <summary>
+            Performs specific action on particular property change
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="model"></param>
+            <param name="getter1"></param>
+            <param name="action"></param>
+            <returns>IDisposable instance that unsibscribes events on Dispose</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.Listen``3(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``1,``2}},System.Action)">
+            <summary>
+            Performs specific action on particular property change with nested property support
+            </summary>
+            <typeparam name="TModel1"></typeparam>
+            <typeparam name="TModel2">Type of model the property references to</typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="model"></param>
+            <param name="getter1">Gets first level property</param>
+            <param name="getter2">Gets nested property</param>
+            <param name="action">The action to perform on property change</param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.Listen``4(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``1,``2}},System.Linq.Expressions.Expression{System.Func{``2,``3}},System.Action)">
+            <summary>
+            Performs specific action on particular property change with nested properties support.
+            </summary>
+            <typeparam name="TModel1"></typeparam>
+            <typeparam name="TModel2"></typeparam>
+            <typeparam name="TModel3"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="model"></param>
+            <param name="getter1">Gets first level property.</param>
+            <param name="getter2">Gets nested property.</param>
+            <param name="getter3">Gets nested property.</param>
+            <param name="action">The action to perform on property change</param>
+            <returns>IDisposable instance that unsibscribes events on Dispose.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.ListenCollection``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action{GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs})">
+            <summary>
+            Performs specific action on particular CollectionChanged event
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.ListenCollection``3(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``1,``2}},System.Action{GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs})">
+            <summary>
+            Performs specific action on particular CollectionChanged event
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.GetPropertyName``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Gets property name
+            </summary>
+            <typeparam name="TI"></typeparam>
+            <typeparam name="TR"></typeparam>
+            <param name="instance"></param>
+            <param name="propertyGetter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.Observe``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action{``1},System.Action{``1})">
+            <summary>
+            More sofisticated changes listener implementation
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TI"></typeparam>
+            <param name="obj"></param>
+            <param name="getterExpr"></param>
+            <param name="leave">Action for old value</param>
+            <param name="enter">Action for new value</param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.Observe``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{``1,System.IDisposable})">
+            <summary>
+            Observe implementation for container property
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TI"></typeparam>
+            <param name="obj"></param>
+            <param name="getterExpr"></param>
+            <param name="subscribe">Subscribed to nested properties</param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.ObserveList``1(GrapeCity.ActiveReports.QueryDesigner.Implementation.INotificationCollection{``0},System.Func{``0,System.Int32,System.IDisposable})">
+            <summary>
+            Observed modifyable collection
+            </summary>
+            <typeparam name="TI"></typeparam>
+            <param name="list"></param>
+            <param name="subscribeItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ActiveModelListenExtensions.ObserveList``1(GrapeCity.ActiveReports.QueryDesigner.Implementation.INotificationCollection{``0},System.Func{``0,System.Int32,System.IDisposable},System.Action{``0})">
+            <summary>
+            Observed modifyable collection
+            </summary>
+            <typeparam name="TI"></typeparam>
+            <param name="list"></param>
+            <param name="subscribeItem"></param>
+            <param name="removedAction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter">
+            <summary>
+            Represents a parameter used with a <see cref="!:IDbCommand"/>.
+            </summary>
+            <devdoc>
+            A generic implementation of <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter"/>.
+            </devdoc>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter"/> class.
+            </summary>
+            <remarks>Parameterless constructor required for JSON deserialization (in VQD).</remarks>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter"/> class.
+            </summary>
+            <param name="parameterName">The name of the parameter</param>
+            <param name="value">The value of the parameter</param>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter.ParameterName">
+            <summary>
+            Gets or sets the name of the parameter.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter.Value">
+            <summary>
+            Gets or sets the value of the parameter.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataTable">
+            <summary>
+            Represents result set of query execution.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataTable.#ctor(System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn},System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataRow})">
+            <summary>
+            Creates new instance of <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataTable"/>.
+            </summary>
+            <param name="columns">The table columns.</param>
+            <param name="rows">The table rows.</param>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataTable.Columns">
+            <summary>
+            Gets table columns.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataTable.Rows">
+            <summary>
+            Gets table rows.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn">
+            <summary>
+            Data column.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn.Name">
+            <summary>
+            Specifies column name.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn.DataType">
+            <summary>
+            Specifies data type of the column.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn.#ctor(System.String,System.String)">
+            <summary>
+            Creates new instance of <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn"/>.
+            </summary>
+            <param name="name">The column name.</param>
+            <param name="dataType">The column type.</param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataRow">
+            <summary>
+            Data row.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataRow.Values">
+            <summary>
+            The row data.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataRow.#ctor(System.Object[])">
+            <summary>
+            Creates new instance of <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataRow"/>.
+            </summary>
+            <param name="values">The row data.</param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter">
+            <summary>
+            Represents a parameter used with a <see cref="T:System.Data.IDbCommand"/>.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter.ParameterName">
+            <summary>
+            Gets or sets the name of the parameter.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter.Value">
+            <summary>
+            Gets or sets the value of the parameter.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameterCollection">
+            <summary>
+            Represents a collection of <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter"/> objects.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameterCollection.Add(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter)">
+            <summary>
+            Adds the specified <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter"/> object to the collection.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column">
+            <summary>
+            Defines a column.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column.#ctor(System.String,System.Type,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column"/> class.
+            </summary>
+            <param name="name">The column name.</param>
+            <param name="dataType">The column data type.</param>
+            <param name="isPrimaryKey">Whether the column is included to primary key.</param>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column.Name">
+            <summary>
+            The column name.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column.DataType">
+            <summary>
+            The column data type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column.IsPrimaryKey">
+            <summary>
+            Whether the column is included to primary key.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema">
+            <summary>
+            Defines the data schema of database.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema.Empty">
+            <summary>
+            Represents the empty data schema.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema.#ctor(System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table},System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema"/> class.
+            </summary>
+            <param name="tables">The tables collection.</param>
+            <param name="foreighKeys">The foreigh keys collection.</param>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema.Tables">
+            <summary>
+            The tables collection
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema.ForeignKeys">
+            <summary>
+            The foreight keys collection which has this table as source.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName">
+            <summary>
+            Defines the name of table.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName"/> class.
+            </summary>
+            <param name="name">The name of table.</param>
+            <param name="schema">The schema name.</param>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.Name">
+            <summary>
+            The name of table.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.Schema">
+            <summary>
+            The schema name.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with the current <see cref="T:System.Object" />.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey">
+            <summary>
+            Defines the foreigh key.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey.#ctor(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table,System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column},System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey"/> class.
+            </summary>
+            <param name="source">The source table.</param>
+            <param name="destination">The destination table.</param>
+            <param name="sourceColumns">The columns that defines a source.</param>
+            <param name="destinationColumns">The columnts that defines a destination.</param>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey.Source">
+            <summary>
+            The source table.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey.Destination">
+            <summary>
+            The destination table.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey.SourceColumns">
+            <summary>
+            The columns that defines a source.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey.DestinationColumns">
+            <summary>
+            The columnts that defines a destination.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table">
+            <summary>
+            Defines a table.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.#ctor(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.TableType,System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table"/> class.
+            </summary>
+            <param name="name">The name of the table.</param>
+            <param name="tableType">The table type.</param>
+            <param name="columns">The table colums collection.</param>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.Name">
+            <summary>
+            The name of table
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.TableType">
+            <summary>
+            The table type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.Columns">
+            <summary>
+            The table colums collection.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.Equals(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table)">
+            <summary>
+            Returns a <see cref="T:System.Boolean" />. This is true if the specified Table is equal to the current Table; otherwise, false.
+            <param name="anotherTable">The table for comparison.</param>
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.Equals(System.Object)">
+            <summary>
+            Returns a <see cref="T:System.Boolean" />. This is true if the specified Object is equal to the current Table; otherwise, false.
+            <param name="obj">The object for comparison.</param>
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.GetHashCode">
+            <summary>
+            Returns a <see cref="T:System.Int32" /> that represents a hash code for the current object.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.op_Equality(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table)">
+            <summary>
+            Returns a <see cref="T:System.Boolean" />. This is true if the first Table is equal to the second Table; otherwise, false.
+            <param name="firstTable">The first table for comparison.</param>
+            <param name="secondTable">The second table for comparison.</param>
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.op_Inequality(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table)">
+            <summary>
+            Returns a <see cref="T:System.Boolean" />. This is true if the first Table is not equal to the second Table; otherwise, false.
+            <param name="firstTable">The first table for comparison.</param>
+            <param name="secondTable">The second table for comparison.</param>
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.TableType">
+            <summary>
+            Defines enumeration of table types.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.TableType.Table">
+            <summary>
+            Table
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.TableType.View">
+            <summary>
+            View
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.DisposablesCollection">
+            <summary>
+            Utility class to redirect Dispose call to its inner items
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.DisposablesCollection.Add(System.IDisposable[])">
+            <summary>
+            Registers object to be disposed on this collection disposal
+            </summary>
+            <param name="disposables"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.DisposablesCollection.Add(System.IDisposable)">
+            <summary>
+            Registers action to be invoked on object dispose
+            </summary>
+            <param name="disposable"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.DisposablesCollection.Add(System.Action[])">
+            <summary>
+            Registers action to be invoked on object dispose
+            </summary>
+            <param name="disposables"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.DisposablesCollection.Dispose">
+            <summary>
+            Performs tasks associated with freeing and releasing resources.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.DisposablesCollection.From(System.IDisposable[])">
+            <summary>
+            Initialized new collection for another list of disposables
+            </summary>
+            <param name="disposables"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.DisposablesCollection.From(System.Action[])">
+            <summary>
+            Initialized new collection for another list of actions
+            </summary>
+            <param name="actions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.DisposablesCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.DisposeAction`1">
+            <summary>
+            Invokes specified action with parameter on instance disposing.
+            Intended to be used as an utility class.
+            </summary>
+            <typeparam name="T">Type of action parameter</typeparam>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.EnumerableExtensions">
+            <summary>
+            Extends methods of work with IEnumerable.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Executes action for each sequence item
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="action"></param>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.IsNull">
+            <summary>Is null</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.IsNotNull">
+            <summary>Is not null</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.Not">
+            <summary>Not</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.UnaryMinus">
+            <summary>unary '-'</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.And">
+            <summary>Logical And</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.Or">
+            <summary>Logical Or</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.In">
+            <summary>In</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.NotIn">
+            <summary>Not in</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.Plus">
+            <summary>arithmetic '+'</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.Minus">
+            <summary>arithmetic '-'</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.Multiple">
+            <summary>arithmetic '*'</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.Divide">
+            <summary>arithmetic '/'</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.Remainder">
+            <summary>arithmetic '%'</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.Equal">
+            <summary>Equal</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.NotEqual">
+            <summary>Different</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.GreaterThan">
+            <summary>Left operand is greater</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.LessThan">
+            <summary>Left operand is less</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.LessThanOrEqual">
+            <summary>Left operand is less or equal</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.GreaterThanOrEqual">
+            <summary>Left operand is greater or equal</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.Like">
+            <summary>Substring. Use '%' signs in the value to match anything</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType.NotLike">
+            <summary>Not substring. Expression - Not like '%reg%'</summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Expression.Format(GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.SqlDialect)">
+            <summary>
+            Gets source of the expression. For VQD frontend needs.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.WildcardExpression">
+            <summary>
+            Models "a.b.*" or "*" expressions.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.TupleExpression">
+            <summary>
+            Models a tuple of expressions such as "(1, 2, 3)".
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.ParameterExpression.Name">
+            <summary>
+            Gets or sets parameter name.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.IItemCollection`1">
+            <summary>
+            Defines interface to readonly collection.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.INotificationCollection`1">
+            <summary>
+            Defines interface to collection with notifications and indexer.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ItemCollectionExtensions">
+            <summary>
+            Utility methods for IItemCollection interfaces.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ItemCollectionExtensions.ToItemCollection``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Wraps the list to item collection.
+            </summary>
+            <typeparam name="T">The items type.</typeparam>
+            <param name="seq">The seq.</param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ItemCollectionExtensions.ItemCollection`1">
+            <summary>
+            Generic item collection implementation.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ItemCollectionExtensions.ItemCollection`1.#ctor(System.Collections.Generic.IList{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ItemCollectionExtensions.ItemCollection`1"/> class.
+            </summary>
+            <param name="items">The rows.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ItemCollectionExtensions.Empty``1">
+            <summary>
+            Gets empty item collection.
+            </summary>
+            <typeparam name="T">The items type.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.IQueryDesignerHost">
+            <summary>
+            Provides schema and methods for <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog"/>
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.IQueryDesignerHost.Schema">
+            <summary>
+            Gets the schema of the data source.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.IQueryDesignerHost.ExecuteQuery(System.String,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter[],System.Int32)">
+            <summary>
+            Exeсutes specified query with specified parameters.
+            </summary>
+            <param name="query">The query to the data source.</param>
+            <param name="parameters">The query parameters.</param>
+            <param name="previewLimit">The row count to return.</param>
+            <returns>The query execution result.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.IQueryDesignerHost.ValidateQuery(System.String,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter[])">
+            <summary>
+            Validates specified query with specified parameters.
+            </summary>
+            <param name="query"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.IQueryDesignerService">
+            <summary>
+            Specifies the query designer service.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1">
+            <summary>
+            Wrapped System.Collections.ObjectModel observable collection
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1.#ctor(System.Collections.Generic.IList{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1"/> class.
+            </summary>
+            <param name="data">The initial items list.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1"/> class.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1.CollectionChangedHandler">
+            <summary>
+            Represents the method that handles events that implement the CollectionChanged event.
+            </summary>
+        </member>
+        <member name="E:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1.CollectionChanged">
+            <summary>
+            Occurs when the items list of the collection has changed, or the collection is reset.
+            </summary>
+        </member>
+        <member name="E:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1.ClearItems">
+            <summary>
+            Clears items in collection.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1.SetItem(System.Int32,`0)">
+            <summary>
+            Replaces the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the element to replace.</param>
+            <param name="item">The new value for the element at the specified index.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1.InsertItem(System.Int32,`0)">
+            <summary>
+            Inserts an element into the collection at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which item should be inserted.</param>
+            <param name="item">The object to insert.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1.RemoveItem(System.Int32)">
+            <summary>
+             Removes the element at the specified index of the collection.
+            </summary>
+            <param name="index">The zero-based index of the element to remove.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1.AddCollectionChanged(GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventHandler)">
+            <summary>
+            Adds the new handler of the CollectionChanged event. 
+            </summary>
+            <param name="handler"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ObservableCollection`1.RemoveCollectionChanged(GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventHandler)">
+            <summary>
+            Removes the handler of the CollectionChanged event.
+            </summary>
+            <param name="handler"></param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedAction">
+            <summary>
+            Enum NotifyCollectionChangedAction
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedAction.Add">
+            <summary>
+            Add action.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedAction.Remove">
+            <summary>
+            Remove action.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedAction.Replace">
+            <summary>
+            Replace action.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedAction.Reset">
+            <summary>
+            Reset action.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs">
+            <summary>
+            Describes the action that caused a System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged event.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs.#ctor(GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedAction,System.Object,System.Object,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs"/> class.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs.#ctor(GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedAction,System.Object,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs"/> class.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs.#ctor(GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedAction)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs"/> class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs.Action">
+            <summary>
+            Gets the action type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs.NewStartingIndex">
+            <summary>
+            Gets the index of the starting of new items.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs.OldStartingIndex">
+            <summary>
+            Gets the index of the starting of old items.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs.NewItems">
+            <summary>
+            Gets the new items.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventArgs.OldItems">
+            <summary>
+            Gets the old items.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.NotifyCollectionChangedEventHandler">
+            <summary>
+            Represents the method that handles events that implement the System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.INotifyCollectionChanged">
+            <summary>
+            Notifies listeners of dynamic changes to a collection, such as when items are added and removed, or the entire collection object is reset.
+            </summary>
+        </member>
+        <member name="E:GrapeCity.ActiveReports.QueryDesigner.Implementation.INotifyCollectionChanged.CollectionChanged">
+            <summary>
+            Occurs when the items list of the collection has changed, or the collection is reset.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.IRelation">
+            <summary>
+            Models a relation such as a select statement, or a table.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.IRelation.RelationType">
+            <summary>
+            For typeless clients like javascript.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query">
+            <summary>
+            Represents a select query
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query.UnsupportedSql">
+            <summary>
+            Gets source text.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query.IsSqlUnsupported">
+            <summary>
+            Checks if query wasn't parsed.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query.Top">
+            <summary>
+            Gets the N from Top statement. i.e. in statement 'select TOP 10 from table' value of the Top property will be 10
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query.HasTop">
+            <summary>
+            Is query have Top keyword
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query.From">
+            <summary>
+            Gets the FROM definition for this SelectQuery
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query.GroupBy">
+            <summary>
+            Gets the GROUP BY definition for this SelectQuery
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query.OrderBy">
+            <summary>
+            Gets the ORDER BY definition for this SelectQuery
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query.Where">
+            <summary>
+            Gets the WHERE conditions for this SelectQuery
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query.Having">
+            <summary>
+            Gets the HAVING conditions for this SelectQuery
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query.Columns">
+            <summary>
+            Gets the collection of columns for this SelectQuery
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Query.IsDistinct">
+            <summary>
+            Gets or sets wheather only distinct rows are to be returned.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.TableRelation">
+            <summary>
+            Models a table name.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.TableRelation.QualifiedName">
+            <summary>
+            Qualified table name.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.TableRelation.Name">
+            <summary>
+            Full table name.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.FromClause">
+            <summary>
+            FROM definition for Query
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.FromClause.BaseTable">
+            <summary>
+            Gets or sets the base table for the FromClause
+            </summary>
+            <remarks>
+            The base table begins the serie of joins. 
+            If no joins are specified for the query the base table is the only table in the select statement.
+            </remarks>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.FromClause.Joins">
+            <summary>
+            Gets the joins for this FromClause
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Join">
+            <summary>
+            Represnts a join between two relations.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Join.Condition">
+            <summary>
+            Join condition.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Join.Type">
+            <summary>
+            JoinType. Left, Full and so on
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Projection">
+            <summary>
+            Represents a single projection in a select statement, it can be either an expression, a wildcard or an expression with an alias.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Projection.Alias">
+            <summary>
+            Aliased name, i.e. in 'select t1.f1 as username' 'username' will be Alias
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.OrderByTerm">
+            <summary>
+            Column by which result ordered
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.OrderByTerm.Direction">
+            <summary>
+            Sort direction
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.JoinType">
+            <summary>
+            Specifies kind of join
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.JoinType.Inner">
+            <summary>Inner Join</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.JoinType.Left">
+            <summary>Left Outer Join</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.JoinType.Right">
+            <summary>Right Outer Join</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.JoinType.Full">
+            <summary>Full Join</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.JoinType.Cross">
+            <summary>Cross Join</summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.OrderByDirection">
+            <summary>
+            Specifies how a result set should be ordered.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.OrderByDirection.Ascending">
+            <summary>Ascending Order</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.OrderByDirection.Descending">
+            <summary>Descending Order</summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryParameterInfo">
+            <summary>
+            Represents the parameter for query
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryParameterInfo.#ctor(System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryParameterInfo"/> class
+            </summary>
+            <param name="name">Parameter name.</param>
+            <param name="type">Parameter type.</param>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryParameterInfo.Name">
+            <summary>
+            Gets or sets the name of the parameter
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryParameterInfo.Type">
+            <summary>
+            Gets or sets the type of the parameter
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryAnalizer">
+            <summary>
+            Helper methods to exstract additional information from query model.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryAnalizer.GetParameters(GrapeCity.ActiveReports.QueryDesigner.Implementation.Query,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema,System.Boolean)">
+            <summary>
+            Search parameters used in the query and try to determine their type.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog">
+            <summary>
+            Query designer API.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog.Query">
+            <summary>
+            Gets or sets SQL query
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog.Parameters">
+            <summary>
+            Gets or sets parameters for SQL query
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog.#ctor(GrapeCity.ActiveReports.QueryDesigner.Implementation.IQueryDesignerHost)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog"/> class
+            </summary>
+            <param name="host"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog.ShowDialog(System.Windows.Forms.Control,System.Boolean)">
+            <summary>
+            Shows the query designer dialog.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerHttpHandlerImpl">
+            <summary>
+            Query designer HTTP handler. For internal use only.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerServer">
+            <summary>
+            VQD embedded HTTP server.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerServiceProxy">
+            <summary>
+            Redirect all requests to UI thread.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryInfo">
+            <summary>
+            The poco object with query information
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryInfo.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryInfo"/>
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryInfo.Query">
+            <summary>
+            The query text
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryInfo.Parameters">
+            <summary>
+            The information about query parameters
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.DynamicMethods">
+            <summary>
+            API to compile dynamic calls of properties, methods.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.EmbeddedExtension">
+            <summary>
+            Reusable handler for embedded resources.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.EmbeddedExtension.Embedded(GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication,System.String,System.Reflection.Assembly,System.String)">
+            <summary>
+            Serves embedded resources of specified assembly.
+            </summary>
+            <param name="app">The application to extend.</param>
+            <param name="urlPrefix">The url prefix.</param>
+            <param name="assembly">The assembly to get resources from.</param>
+            <param name="resourcePrefix">The name prefix of embedded resource.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.EmbeddedExtension.IndexFull(GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication,System.String,System.String,System.String,System.Reflection.Assembly,System.Collections.Generic.List{System.String[]})">
+            <summary>
+            Register index.full.html which contains all scripts embedded.
+            </summary>
+            <param name="app"></param>
+            <param name="assembly"></param>
+            <param name="names"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication">
+            <summary>
+            HTTP router inspired by express.js.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication.Get(System.String,System.Action{GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RequestContext})">
+            <summary>
+            Registers GET handler on given route.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication.Post(System.String,System.Action{GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RequestContext})">
+            <summary>
+            Registers POST handler on given route.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication.Head(System.String,System.Action{GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RequestContext})">
+            <summary>
+            Registers HEAD handler on given route.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication.Put(System.String,System.Action{GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RequestContext})">
+            <summary>
+            Registers PUT handler on given route.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication.Update(System.String,System.Action{GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RequestContext})">
+            <summary>
+            Registers UPDATE handler on given route.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication.Delete(System.String,System.Action{GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RequestContext})">
+            <summary>
+            Registers DELETE handler on given route.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.HttpContext">
+            <summary>
+            Common <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.IHttpContext"/> implementation.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.HttpRequestImpl">
+            <summary>
+            Common implementation of <see cref="!:HttpRequestBase"/>.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.HttpResponseImpl">
+            <summary>
+            Common implementation of <see cref="!:HttpResponseBase"/>.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.IHttpMessage">
+            <summary>
+            Common interface for HTTP request/response.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.IHttpRequest">
+            <summary>
+            HTTP request.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.IHttpResponse">
+            <summary>
+            HTTP response.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.IHttpContext">
+            <summary>
+            HTTP context.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.MimeType">
+            <summary>
+            Mime type mappings.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RestIgnoreAttribute">
+            <summary>
+            Use this attribute on property to ignore by <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RestExtension"/>.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RestAttribute">
+            <summary>
+            Use this attribute on method to bind POST handler generated by <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RestExtension"/>.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RestExtension">
+            <summary>
+            REST extension for <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication"/>.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RestExtension.Rest``1(GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication,System.String,System.Func{GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.RequestContext,``0})">
+            <summary>
+            Builds REST handlers for given model function.
+            </summary>
+            <typeparam name="T">Model type.</typeparam>
+            <param name="app"><see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.ExpressApplication"/> to extend.</param>
+            <param name="modelUrl">The model url.</param>
+            <param name="getModel">The function which returns model instance.</param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SharpExpress.WebServiceExtension">
+            <summary>
+            Middleware to host web services.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.Grammar.CaseSensitive">
+            <summary>
+            Gets case sensitivity of the grammar. Read-only, true by default. 
+            Can be set to false only through a parameter to grammar constructor.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.Grammar.Root">
+            <summary>
+            The main root entry for the grammar. 
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.Grammar.SnippetRoots">
+            <summary>
+            Alternative roots for parsing code snippets.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.Grammar.OnScannerSelectTerminal(GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Parser.ParsingContext)">
+            <summary>
+            Override this method to help scanner select a terminal to create token when there are more than one candidates
+            for an input char. context.CurrentTerminals contains candidate terminals; leave a single terminal in this list
+            as the one to use.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.Grammar.SkipWhitespace(GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.ISourceStream)">
+            <summary>Skips whitespace characters in the input stream. </summary>
+            <remarks>Override this method if your language has non-standard whitespace characters.</remarks>
+            <param name="source">Source stream.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.Grammar.IsWhitespaceOrDelimiter(System.Char)">
+            <summary>Returns true if a character is whitespace or delimiter. Used in quick-scanning versions of some terminals. </summary>
+            <param name="ch">The character to check.</param>
+            <returns>True if a character is whitespace or delimiter; otherwise, false.</returns>
+            <remarks>Does not have to be completely accurate, should recognize most common characters that are special chars by themselves
+            and may never be part of other multi-character tokens. </remarks>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.Grammar.AddTermsReportGroup(System.String,System.String[])">
+            <summary>
+            Creates a terminal reporting group, so all terminals in the group will be reported as a single "alias" in syntex error messages like
+            "Syntax error, expected: [list of terms]"
+            </summary>
+            <param name="alias">An alias for all terminals in the group.</param>
+            <param name="symbols">Symbols to be included into the group.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.Grammar.AddTermsReportGroup(System.String,GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Terminals.Terminal[])">
+            <summary>
+            Creates a terminal reporting group, so all terminals in the group will be reported as a single "alias" in syntex error messages like
+            "Syntax error, expected: [list of terms]"
+            </summary>
+            <param name="alias">An alias for all terminals in the group.</param>
+            <param name="terminals">Terminals to be included into the group.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.Grammar.AddToNoReportGroup(System.String[])">
+            <summary>
+            Adds symbols to a group with no-report type, so symbols will not be shown in expected lists in syntax error messages. 
+            </summary>
+            <param name="symbols">Symbols to exclude.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.Grammar.AddToNoReportGroup(GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Terminals.Terminal[])">
+            <summary>
+            Adds symbols to a group with no-report type, so symbols will not be shown in expected lists in syntax error messages. 
+            </summary>
+            <param name="symbols">Symbols to exclude.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.Grammar.AddOperatorReportGroup(System.String)">
+            <summary>
+            Adds a group and an alias for all operator symbols used in the grammar.
+            </summary>
+            <param name="alias">An alias for operator symbols.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Grammar.GrammarHint.Apply(GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Data.LanguageData,GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Data.Construction.LRItem)">
+            <summary> Gives a chance to a custom code in hint to interfere in parser automaton construction.</summary>
+            <param name="language">The LanguageData instance.</param>
+            <param name="owner">The LRItem that "owns" the hint. </param>
+            <remarks>
+            The most common purpose of this method (it's overrides) is to resolve the conflicts
+            by adding specific actions into State.Actions dictionary. 
+            The owner parameter represents the position in the grammar expression where the hint
+            is found. The parser state is available through owner.State property. 
+            </remarks>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Parser.ParserActions.ReduceParserAction">
+            <summary>Base class for more specific reduce actions. </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Parser.ParserActions.ReduceParserAction.Create(GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Data.Production)">
+            <summary>Factory method for creating a proper type of reduce parser action. </summary>
+            <param name="production">A Production to reduce.</param>
+            <returns>Reduce action.</returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Parser.ParserActions.ReduceTransientParserAction">
+            <summary>Reduces non-terminal marked as Transient by MarkTransient method. </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Parser.ParserActions.ReduceListBuilderParserAction">
+            <summary>Reduces list created by MakePlusRule or MakeListRule methods. </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Parser.ParseTreeNode.IsPunctuationOrEmptyTransient">
+            <summary>Returns true if the node is punctuation or it is transient with empty child list.</summary>
+            <returns>True if parser can safely ignore this node.</returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Parser.SpecialActionsHints.PrecedenceHint">
+            <summary> A hint to use precedence. </summary>
+            <remarks>
+            Not used directly in grammars; injected automatically by system in states having conflicts on operator symbols. 
+            The purpose of the hint is make handling precedence similar to other conflict resolution methods - through hints
+            activated during parser construction. The hint code analyzes the conflict and resolves it by adding custom or general action
+            for a conflicting input. 
+            </remarks>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.SourceLocation.Line">
+            <summary>Source line number, 0-based.</summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.SourceLocation.Column">
+            <summary>Source column number, 0-based.</summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.ISourceStream">
+            <summary>
+            Interface for Terminals to access the source stream and produce tokens.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.ISourceStream.Text">
+            <summary>
+            Returns the source text
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.ISourceStream.Location">
+            <summary>
+            Gets or sets the start location (position, row, column) of the new token
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.ISourceStream.Position">
+            <summary>
+            Gets or sets the current position in the source file. When reading the value, returns Location.Position value. 
+            When a new value is assigned, the Location is modified accordingly. 
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.ISourceStream.PreviewPosition">
+            <summary>
+            Gets or sets the current preview position in the source file. Must be greater or equal to Location.Position
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.ISourceStream.PreviewChar">
+            <summary>
+            Gets a char at preview position
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.ISourceStream.NextPreviewChar">
+            <summary>
+            Gets the char at position next after the PrevewPosition 
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.ISourceStream.CreateToken(GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Terminals.Terminal)">
+            <summary>
+            Creates a new token based on current preview position.
+            </summary>
+            <param name="terminal">A terminal associated with the token.</param>
+            <returns>New token.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.ISourceStream.CreateToken(GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Terminals.Terminal,System.Object)">
+            <summary>
+            Creates a new token based on current preview position and sets its Value field.
+            </summary>
+            <param name="terminal">A terminal associated with the token.</param>
+            <param name="value">The value associated with the token.</param>
+            <returns>New token.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.Irony.Parsing.Scanner.ISourceStream.MatchSymbol(System.String)">
+            <summary>Tries to match the symbol with the text at current preview position. </summary>
+            <param name="symbol">A symbol to match</param>
+            <returns>True if there is a match; otherwise, false.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.SqlParser.QueryBuilderInternal.SetWildCardOwner(GrapeCity.ActiveReports.QueryDesigner.Implementation.Query)">
+            <summary>
+            Sets owner for wildcards like {*} in simple queries with one table to allow further adjustments through VQD
+            </summary>
+            <param name="query"></param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.ColumnViewModel">
+            <summary>
+            View model for query expression (column, groupby, orderby, filters).
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.ColumnViewModel.UpdateColumnsTotalToGroupBy">
+            <summary>
+            If we set Total to GroupBy for 1 column, we should set Total to GroupBy for other columns which has not Total.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.ExpressionExtensions.Decomposite(GrapeCity.ActiveReports.QueryDesigner.Implementation.Expression,GrapeCity.ActiveReports.QueryDesigner.Implementation.ExpressionType[])">
+            <summary>
+            Decomposite expressions to list recursively. The operation is inversion of JoinWithOperator
+            </summary>
+            <param name="condition">Source condition</param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.FilterCell">
+            <summary>
+            Filter grid cell.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.FilterCell.Expresion">
+            <summary>
+            Expression in filter.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.FilterRowCollection">
+            <summary>
+            Filters grid.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.JoinField">
+            <summary>
+            Single join condition.
+            </summary> 
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.JoinField.RelatedTables">
+            <summary>
+            Gets all possible join targets for this relation.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.JoinField.RelatedTableColumns">
+            <summary>
+            Gets all possible join fields for selected target table.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.JoinField.JoinColumns">
+            <summary>
+            Gets all possible join fields for this relation.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.JoinHelper.BuildJoinCondition(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema,GrapeCity.ActiveReports.QueryDesigner.Implementation.TableRelation,GrapeCity.ActiveReports.QueryDesigner.Implementation.TableRelation)">
+            <summary>
+            This function should be used to create right join Condition
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.ParameterViewModel">
+            <summary>
+            Parameter view model.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.ParameterCollection">
+            <summary>
+            <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.ParameterViewModel"/> collection.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.QueryViewModel">
+            <summary>
+            VQD query view model.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.QueryViewModel.Sql">
+            <summary>
+            Gets right sql
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.QueryViewModel.CanAddWildCard(GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.RelationViewModel)">
+            <summary>
+            Check field names for duplicate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.RelationViewModel">
+            <summary>
+            View model for single table in query.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.RelationViewModel.RelationType">
+            <summary>
+            This is used to disable join related controls.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.RelationViewModel.IsJoin">
+            <summary>
+            Checks if the relation is join relation
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.RelationViewModel.HasErrorInJoin">
+            <summary>
+            For validation QVM
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.RelationViewModel.HasValidDefaultJoin">
+            <summary>
+            Checks if the default relation is valid (has valid forign keys relations).
+            
+            Not acceptable for 'Cross' relation.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.RelationViewModel.JoinType">
+            <summary>
+            Gets current relation join table.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.SchemaExtensions.FindTable(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName)">
+            <summary>
+            Lookups given table in schema.
+            </summary>
+            <param name="schema">The data schema.</param>
+            <param name="name">Name of the table to find.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.SchemaExtensions.GetTable(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName)">
+            <summary>
+            Checks whether the specified table exists in given data schema. Throws exception if the table was not found.
+            </summary>
+            <param name="schema">The data schema.</param>
+            <param name="name">Name of the table to find.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.SchemaExtensions.GetTable(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema,System.String,System.String)">
+            <summary>
+            Checks whether the specified table exists in given data schema. Throws exception if the table was not found.
+            </summary>
+            <param name="schema">The data schema.</param>
+            <param name="schemaName">The name of the table schema.</param>
+            <param name="name">Name of the table to find.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.SchemaExtensions.GetTable(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema,GrapeCity.ActiveReports.QueryDesigner.Implementation.TableRelation)">
+            <summary>
+            Checks whether the specified table exists in given data schema. Throws exception if the table was not found.
+            </summary>
+            <param name="schema">The data schema.</param>
+            <param name="relation">Name of the table to find.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.SchemaExtensions.GetColumns(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema,GrapeCity.ActiveReports.QueryDesigner.Implementation.TableRelation)">
+            <summary>
+            Gets columns for given table. Throws exception if the table was not found.
+            </summary>
+            <param name="schema"></param>
+            <param name="relation"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.ViewModels.SchemaExtensions.GetColumns(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table)">
+            <summary>
+            Gets columns for given table. Throws exception if the table was not found.
+            </summary>
+            <param name="schema"></param>
+            <param name="table"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.QueryDesigner.Licensing.LicenseManager.GetLicenseLevel">
+            <summary>
+            Gets the license level for a given object type.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Licensing.LicenseLevel">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Licensing.LicenseLevel.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Licensing.LicenseLevel.StandardTrial">
+            <summary>
+            Standard trial
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Licensing.LicenseLevel.ProfessionalTrial">
+            <summary>
+            Professional trial
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Licensing.LicenseLevel.Standard">
+            <summary>
+            Standard
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.QueryDesigner.Licensing.LicenseLevel.Professional">
+            <summary>
+            Professional
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Resources.CommonResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.CommonResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.CommonResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.CommonResources.ExpressionOfNonBooleanType">
+            <summary>
+              Looks up a localized string similar to An expression of non-boolean type specified in a context where a condition is expected..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.CommonResources.QueryDesignerTitle">
+            <summary>
+              Looks up a localized string similar to Visual Query Designer.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ConsoleNoChars">
+            <summary>
+              Looks up a localized string similar to Nn.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ConsoleYesChars">
+            <summary>
+              Looks up a localized string similar to Yy.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrAmbigGrammarRR">
+            <summary>
+              Looks up a localized string similar to Ambiguous grammar, unresolvable reduce-reduce conflicts. State {0}, lookaheads [{1}].
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrAmbigGrammarSR">
+            <summary>
+              Looks up a localized string similar to Ambiguous grammar, unresolvable shift-reduce conflicts. State {0}, lookaheads [{1}].
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrArgListNotFound">
+            <summary>
+              Looks up a localized string similar to Argument list not found in the stack. Expected: ValueList, found: {0}..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrAssignLiteralValue">
+            <summary>
+              Looks up a localized string similar to Invalid operation, attempt to assign to a constant or literal value..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrAtLineColumn">
+            <summary>
+              Looks up a localized string similar to Error at line {0} column {1} {2}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrBadChar">
+            <summary>
+              Looks up a localized string similar to Invalid length of char literal - should be a single character..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrBadStrLiteral">
+            <summary>
+              Looks up a localized string similar to Mal-formed  string literal - cannot find termination symbol..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrBadUnEscape">
+            <summary>
+              Looks up a localized string similar to Invalid unicode escape ({0}), expected {1} hex digits..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrBadXEscape">
+            <summary>
+              Looks up a localized string similar to Invalid \x escape, at least one digit expected..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrCannotConvertValue">
+            <summary>
+              Looks up a localized string similar to Cannot convert value from type {0} to type {1}, type converter not defined..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrCannotConvertValueToType">
+            <summary>
+              Looks up a localized string similar to Cannot convert literal {0} to type {1}..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrCannotMoveBackInSource">
+            <summary>
+              Looks up a localized string similar to Fatal error in parser: attempt to move back in the source..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrConflictMsgTemplate">
+            <summary>
+              Looks up a localized string similar to {0} State {1} on inputs: {2}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrConsoleFatalError">
+            <summary>
+              Looks up a localized string similar to Fatal error:.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrConstructNotSupported">
+            <summary>
+              Looks up a localized string similar to Construct &apos;{0}&apos; is not supported (yet) by language implementation..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrDsvNoClosingQuote">
+            <summary>
+              Looks up a localized string similar to Could not find a closing quote for quoted value..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrDupRegexSwitch">
+            <summary>
+              Looks up a localized string similar to Duplicate switch &apos;{0}&apos; for regular expression..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrDupStartSymbolStr">
+            <summary>
+              Looks up a localized string similar to Duplicate start symbol {0} in string literal [{1}]..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrFailedCreateNode">
+            <summary>
+              Looks up a localized string similar to Failed to create AST node for non-terminal [{0}], error: {1}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrFreeTextNoEndTag">
+            <summary>
+              Looks up a localized string similar to Failed to find the ending tag &apos;{0}&apos; for a text literal. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrImpliedOpUseParserLink">
+            <summary>
+              Looks up a localized string similar to ImpliedSymbolTerminal cannot be used in grammar with DisableScannerParserLink flag set.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInternalErrDataPopFailed">
+            <summary>
+              Looks up a localized string similar to Interpreter error, DataStack.Pop() operation failed - stack is empty..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInterpreterIsBusy">
+            <summary>
+              Looks up a localized string similar to Interpreter is busy..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInvalidArgsForIncDec">
+            <summary>
+              Looks up a localized string similar to Invalid arguments for IncDecNode AST node: either first or second argument should be &apos;--&apos; or &apos;++&apos;..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInvalidAstMode">
+            <summary>
+              Looks up a localized string similar to Invalid AstMode value in call to Evaluate method. Node: {0}, mode: {1}..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInvalidChar">
+            <summary>
+              Looks up a localized string similar to Invalid character: &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInvalidEmbeddedPrefix">
+            <summary>
+              Looks up a localized string similar to Invalid embedded expression. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInvDedent">
+            <summary>
+              Looks up a localized string similar to Invalid dedent level, no previous matching indent found..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInvEscape">
+            <summary>
+              Looks up a localized string similar to Invalid escape sequence: \{0}..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInvEscSeq">
+            <summary>
+              Looks up a localized string similar to Invalid escape sequence..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInvEscSymbol">
+            <summary>
+              Looks up a localized string similar to Invalid escape symbol, expected &apos;u&apos; or &apos;U&apos; only..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInvNumber">
+            <summary>
+              Looks up a localized string similar to Invalid number..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInvRegexSwitch">
+            <summary>
+              Looks up a localized string similar to Invalid switch &apos;{0}&apos; for regular expression.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrInvStrDef">
+            <summary>
+              Looks up a localized string similar to Error in string literal [{0}]: No start/end symbols specified..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrLastTermOfErrorProd">
+            <summary>
+              Looks up a localized string similar to The last term of production containing SyntaxError must be a terminal. NonTerminal: {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrListCannotBeTransient">
+            <summary>
+              Looks up a localized string similar to List non-terminals cannot be marked transient; list: ({0}).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrNewLineExpected">
+            <summary>
+              Looks up a localized string similar to Expected new line symbol..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrNoClosingBrace">
+            <summary>
+              Looks up a localized string similar to No closing pair for opening symbol {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrNodeTypeNotSetOn">
+            <summary>
+              Looks up a localized string similar to AstNodeType or AstNodeCreator is not set on non-terminals: {0}. Either set Term.AstConfig.NodeType, or provide default values in AstContext..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrNoEndForRegex">
+            <summary>
+              Looks up a localized string similar to No end symbol for regex literal..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrNoEndTagInEmbExpr">
+            <summary>
+              Looks up a localized string similar to No ending tag &apos;{0}&apos; found in embedded expression..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrNoImplForUnaryOp">
+            <summary>
+              Looks up a localized string similar to UnExprNode: no implementation for unary operator &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrNoLetterAfterNum">
+            <summary>
+              Looks up a localized string similar to Number cannot be followed by a letter..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrNoLkhds">
+            <summary>
+              Looks up a localized string similar to ParserDataBuilder error: inadequate state {0}, reduce item &apos;{1}&apos; has no lookaheads..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrNtRuleIsNull">
+            <summary>
+              Looks up a localized string similar to Non-terminal {0} has uninitialized Rule property..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrNullNodeEval">
+            <summary>
+              Looks up a localized string similar to Attempt to evaluate NULL AST node. The AST node for term &apos;{0}&apos; was not created during parsing..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrOpNotDefinedForType">
+            <summary>
+              Looks up a localized string similar to Operator &apos;{0}&apos; is not defined for types {1}..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrOpNotDefinedForTypes">
+            <summary>
+              Looks up a localized string similar to Operator &apos;{0}&apos; is not defined for types {1} and {2}..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrOpNotImplemented">
+            <summary>
+              Looks up a localized string similar to Operator &apos;{0} not imlemented..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrOutErrorPrintFormat">
+            <summary>
+              Looks up a localized string similar to {0}: {1}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrOutlineFilterContSymbol">
+            <summary>
+              Looks up a localized string similar to CodeOutlineFilter: line continuation symbol &apos;{0}&apos; should be added to Grammar.NonGrammarTerminals list..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrParserUnexpectedInput">
+            <summary>
+              Looks up a localized string similar to Syntax error, unexpected input..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrParseTreeNull">
+            <summary>
+              Looks up a localized string similar to Parsed tree is null, cannot evaluate..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrParseTreeRootNull">
+            <summary>
+              Looks up a localized string similar to Parse tree root is null, cannot evaluate..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrRootAstNodeNull">
+            <summary>
+              Looks up a localized string similar to Root AST node is null, cannot evaluate..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrRootAstNoInterface">
+            <summary>
+              Looks up a localized string similar to Root AST node does not implement IInterpretedAstNode interface, cannot evaluate..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrRootNotRegistered">
+            <summary>
+              Looks up a localized string similar to ({0}) term passed as &apos;root&apos; parameter to parser is not Root or snippet root of the grammar. Add it to SnippetRoots set in grammar constructor..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrRootNotSet">
+            <summary>
+              Looks up a localized string similar to Root property of the grammar is not set..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrRRConflict">
+            <summary>
+              Looks up a localized string similar to Reduce-reduce conflict. State {0}, lookaheads: {1}. Selected reduce on first production in conflict set..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrRuleContainsNull">
+            <summary>
+              Looks up a localized string similar to Rule for NonTerminal {0} contains null as an operand in position {1} in one of productions..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrSRConflict">
+            <summary>
+              Looks up a localized string similar to Shift-reduce conflict. State {0}, lookaheads [{1}]. Selected shift as preferred action..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrSyntaxErrorExpected">
+            <summary>
+              Looks up a localized string similar to Syntax error, expected: {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrSyntaxErrorNoInfo">
+            <summary>
+              Looks up a localized string similar to Syntax error..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrTemplExprNotRoot">
+            <summary>
+              Looks up a localized string similar to Expression root non-terminal in template settings (AstNodeConfig property) in templated string literal [{0}] is not added to Roots set. Add it to SnippetRoots in grammar constructor..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrTemplMissingExprRoot">
+            <summary>
+              Looks up a localized string similar to Expression root is not specified in template settings (AstNodeConfig property) in templated string literal [{0}]. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrTemplNoSettings">
+            <summary>
+              Looks up a localized string similar to Error in string literal [{0}]: IsTemplate flag is set, but TemplateSettings is not provided in AstNodeConfig property..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrTerminalHasEmptyPrefix">
+            <summary>
+              Looks up a localized string similar to A terminal {0} has empty prefix..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrTransientNtMustHaveOneTerm">
+            <summary>
+              Looks up a localized string similar to Transient non-terminal must have zero or one non-punctuation child nodes; non-terminals: {0}..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrUnclosedComment">
+            <summary>
+              Looks up a localized string similar to Unclosed comment block.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrUnexpEof">
+            <summary>
+              Looks up a localized string similar to Unexpected end of file..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrUnexpIndent">
+            <summary>
+              Looks up a localized string similar to Unexpected indentation..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrUnmatchedCloseBrace">
+            <summary>
+              Looks up a localized string similar to Unmatched closing brace &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrVarIsNotCallable">
+            <summary>
+              Looks up a localized string similar to Variable {0} is not a callable function..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrVarNotDefined">
+            <summary>
+              Looks up a localized string similar to Variable {0} not defined..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.ErrWrongArgCount">
+            <summary>
+              Looks up a localized string similar to Invalid number of arguments. Expected {0}, found {1}..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.FmtRowCol">
+            <summary>
+              Looks up a localized string similar to ({0}:{1}).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelActionAccept">
+            <summary>
+              Looks up a localized string similar to Accept.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelActionOp">
+            <summary>
+              Looks up a localized string similar to Operator, shift to {0}/reduce on {1}..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelActionReduce">
+            <summary>
+              Looks up a localized string similar to Reduce on {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelActionShift">
+            <summary>
+              Looks up a localized string similar to Shift to {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelActionUnknown">
+            <summary>
+              Looks up a localized string similar to (Unknown action type).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelEofMark">
+            <summary>
+              Looks up a localized string similar to (EOF).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelEosLabel">
+            <summary>
+              Looks up a localized string similar to [end-of-statement].
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelInitialState">
+            <summary>
+              Looks up a localized string similar to (INITIAL STATE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelKeySymbol">
+            <summary>
+              Looks up a localized string similar to (Key symbol).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelKeyword">
+            <summary>
+              Looks up a localized string similar to (Keyword).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelLineBreak">
+            <summary>
+              Looks up a localized string similar to [line break].
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelLocation">
+            <summary>
+              Looks up a localized string similar to Location:.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelNone">
+            <summary>
+              Looks up a localized string similar to None.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelSrcHaveMore">
+            <summary>
+              Looks up a localized string similar to ....
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.LabelUnnamed">
+            <summary>
+              Looks up a localized string similar to (unnamed).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgAbortScriptYN">
+            <summary>
+              Looks up a localized string similar to Abort script(y/n)?.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgDefaultConsoleGreeting">
+            <summary>
+              Looks up a localized string similar to {0} Console.\r\nPress Ctrl-C to exit the program.\r\n.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgDefaultConsoleTitle">
+            <summary>
+              Looks up a localized string similar to Console.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgErrorCustomActionDidNotAdvance">
+            <summary>
+              Looks up a localized string similar to Custom action did not execute: parser state or input did not change..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgExitConsoleYN">
+            <summary>
+              Looks up a localized string similar to Exit console (y/n)?.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgNLALRAdvice">
+            <summary>
+              Looks up a localized string similar to NLALR transform: Add WrapTail() in &apos;.&apos; position to [{0}]..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgPressAnyKeyToExit">
+            <summary>
+              Looks up a localized string similar to Press any key to end the program..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgSrcPosToString">
+            <summary>
+              Looks up a localized string similar to &quot;[{0}], at {1}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTraceConflictResolved">
+            <summary>
+              Looks up a localized string similar to Parsing conflict resolved in code..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTraceExecCustomAction">
+            <summary>
+              Looks up a localized string similar to Executing custom action.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTraceOpResolved">
+            <summary>
+              Looks up a localized string similar to Operator - resolved to {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTracePoppedState">
+            <summary>
+              Looks up a localized string similar to Popped state from stack, pushing {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTraceRecoverAction">
+            <summary>
+              Looks up a localized string similar to RECOVERING: {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTraceRecoverFailed">
+            <summary>
+              Looks up a localized string similar to FAILED TO RECOVER.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTraceRecoverFoundState">
+            <summary>
+              Looks up a localized string similar to RECOVERING: Found state with shift on error : {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTraceRecovering">
+            <summary>
+              Looks up a localized string similar to RECOVERING: popping stack, looking for state with error shift.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTraceRecoverReducing">
+            <summary>
+              Looks up a localized string similar to RECOVERING: Reached end of error production, reducing..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTraceRecoverShiftError">
+            <summary>
+              Looks up a localized string similar to RECOVERING: Shifting Error term, {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTraceRecoverShiftTillEnd">
+            <summary>
+              Looks up a localized string similar to RECOVERING: shifting until the end of error production..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.ParserResources.MsgTraceRecoverSuccess">
+            <summary>
+              Looks up a localized string similar to RECOVERED.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.AliasIsBusy">
+            <summary>
+              Looks up a localized string similar to Alias &apos;{0}&apos; is already taken..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.AliasIsInvalid">
+            <summary>
+              Looks up a localized string similar to Alias &apos;{0}&apos; has invalid chars..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.DataSchemaIsEmptyError">
+            <summary>
+              Looks up a localized string similar to The data provider caused an exception while attempting to retreive schema information: &apos;Data schema is empty&apos;..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.EditJoinFields">
+            <summary>
+              Looks up a localized string similar to Join fields.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.ErrorPane_ErrorOccurred">
+            <summary>
+              Looks up a localized string similar to Error(s) occurred.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.ExpressionIsEmpty">
+            <summary>
+              Looks up a localized string similar to Expression cannot be empty..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.HeaderColumns">
+            <summary>
+              Looks up a localized string similar to Selected Fields.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.HeaderQueryTools">
+            <summary>
+              Looks up a localized string similar to Query Tools.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.HeaderTables">
+            <summary>
+              Looks up a localized string similar to Tables and Relationships.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_AddRelation">
+            <summary>
+              Looks up a localized string similar to Add Relation.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_Cancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_Field">
+            <summary>
+              Looks up a localized string similar to Field.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_HelpAfterTableName">
+            <summary>
+              Looks up a localized string similar to to other tables from the query.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_HelpBeforeTableName">
+            <summary>
+              Looks up a localized string similar to Please specify the relation of table.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_JoinType">
+            <summary>
+              Looks up a localized string similar to Join Type:.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_JoinType_Inner">
+            <summary>
+              Looks up a localized string similar to Inner Join.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_JoinType_OuterLeft">
+            <summary>
+              Looks up a localized string similar to Left Outer.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_JoinType_OuterRight">
+            <summary>
+              Looks up a localized string similar to Right Outer.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_OK">
+            <summary>
+              Looks up a localized string similar to OK.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_RelatedTable">
+            <summary>
+              Looks up a localized string similar to Related table.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_RelatedTablesField">
+            <summary>
+              Looks up a localized string similar to Related table&apos;s field.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_Relations">
+            <summary>
+              Looks up a localized string similar to Relations.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.JoinEdit_Title">
+            <summary>
+              Looks up a localized string similar to Tables relations.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.LabelOrFilter">
+            <summary>
+              Looks up a localized string similar to or.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.LabelWhereFilter">
+            <summary>
+              Looks up a localized string similar to Where.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.Parameters_Cancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.Parameters_Name">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.Parameters_OK">
+            <summary>
+              Looks up a localized string similar to OK.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.Parameters_Title">
+            <summary>
+              Looks up a localized string similar to Parameters.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.Parameters_Value">
+            <summary>
+              Looks up a localized string similar to Value.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.Preview_Title">
+            <summary>
+              Looks up a localized string similar to Results.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.PreviewBinary">
+            <summary>
+              Looks up a localized string similar to &lt;&lt;Binary Data&gt;&gt;.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.PreviewEmpty">
+            <summary>
+              Looks up a localized string similar to &lt;&lt;Empty&gt;&gt;.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.PreviewNull">
+            <summary>
+              Looks up a localized string similar to &lt;&lt;Null&gt;&gt;.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryColumn_Alias">
+            <summary>
+              Looks up a localized string similar to Alias.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryColumn_Delete">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryColumn_Table">
+            <summary>
+              Looks up a localized string similar to Table.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryDublicateNames">
+            <summary>
+              Looks up a localized string similar to Query with equal field names can not be executed and saved in VQD. Duplicate fields: {0}..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_Aggregate">
+            <summary>
+              Looks up a localized string similar to Total.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_Alias">
+            <summary>
+              Looks up a localized string similar to Alias.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_Delete">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_Distinct">
+            <summary>
+              Looks up a localized string similar to Distinct.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_Expression">
+            <summary>
+              Looks up a localized string similar to Expression.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_Filter">
+            <summary>
+              Looks up a localized string similar to Filter.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_FilterTooltip">
+            <summary>
+              Looks up a localized string similar to Filter.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_Output">
+            <summary>
+              Looks up a localized string similar to Output.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_Sort">
+            <summary>
+              Looks up a localized string similar to Sort.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_SortAsc">
+            <summary>
+              Looks up a localized string similar to Ascending.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_SortDesc">
+            <summary>
+              Looks up a localized string similar to Descending.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_SortOrder">
+            <summary>
+              Looks up a localized string similar to Sort Order.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_SortUnsorted">
+            <summary>
+              Looks up a localized string similar to Unsorted.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryField_Table">
+            <summary>
+              Looks up a localized string similar to Table.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryView_DesignTab">
+            <summary>
+              Looks up a localized string similar to Design.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.QueryView_SQLTab">
+            <summary>
+              Looks up a localized string similar to SQL.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.RelationDel_Caption">
+            <summary>
+              Looks up a localized string similar to Table remove.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.RelationDel_Message">
+            <summary>
+              Looks up a localized string similar to \\&apos;{0}\\&apos; table will be deleted. Referencing table(s): {1} will be deleted too. Continue?.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.RelationDel_No">
+            <summary>
+              Looks up a localized string similar to No.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.RelationDel_Yes">
+            <summary>
+              Looks up a localized string similar to Yes.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.SchemaHint">
+            <summary>
+              Looks up a localized string similar to Double click the table or field name in the database view or drag and drop it here..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.SchemaView_DatabaseView">
+            <summary>
+              Looks up a localized string similar to Database view.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.ShowHints">
+            <summary>
+              Looks up a localized string similar to Show hints.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.TogglePanels">
+            <summary>
+              Looks up a localized string similar to Toggle panels.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.Toolbar_ClearQuery">
+            <summary>
+              Looks up a localized string similar to Clear.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.Toolbar_ClearTooltip">
+            <summary>
+              Looks up a localized string similar to Clear.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.Toolbar_Execute">
+            <summary>
+              Looks up a localized string similar to Execute.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.QueryDesigner.Resources.VQDResources.Toolbar_SaveQuery">
+            <summary>
+              Looks up a localized string similar to Save.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Tools.SimpleJsonDeserializer">
+            <summary>
+            Allows you to deserialize json strings as key-value pair storage (dictionary)
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Tools.SimpleJsonDeserializer.Deserialize(System.IO.TextReader)">
+            <summary>
+            Returns array or dictionary.
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\maxxr\\Documents\\GitHub\\WebSamples18\\WebDesigner_Blazor_Custom\\wwwroot\\css\\icon.css",
+      "PackagePath": "staticwebassets\\css\\icon.css"
+    },
+    {
+      "Id": "C:\\Users\\maxxr\\Documents\\GitHub\\WebSamples18\\WebDesigner_Blazor_Custom\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\maxxr\\Documents\\GitHub\\WebSamples18\\WebDesigner_Blazor_Custom\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebDesigner_Blazor_Custom.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WebDesigner_Blazor_Custom.props",
+      "PackagePath": "build\\WebDesigner_Blazor_Custom.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WebDesigner_Blazor_Custom.props",
+      "PackagePath": "buildMultiTargeting\\WebDesigner_Blazor_Custom.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WebDesigner_Blazor_Custom.props",
+      "PackagePath": "buildTransitive\\WebDesigner_Blazor_Custom.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

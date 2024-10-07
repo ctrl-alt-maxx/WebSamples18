@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>MESCIUS.ActiveReports.QueryDesigner</name>
+  </assembly>
+  <members>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter">
+      <summary>
+            Represents a parameter used with a <see cref="!:IDbCommand" />.
+            </summary>
+      <devdoc>
+            A generic implementation of <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter" />.
+            </devdoc>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter.#ctor(System.String,System.Object)">
+      <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter" /> class.
+            </summary>
+      <param name="parameterName">The name of the parameter</param>
+      <param name="value">The value of the parameter</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter.ParameterName">
+      <summary>
+            Gets or sets the name of the parameter.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataProviders.DataParameter.Value">
+      <summary>
+            Gets or sets the value of the parameter.
+            </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataTable">
+      <summary>
+            Represents result set of query execution.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataTable.#ctor(System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn},System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataRow})">
+      <summary>
+            Creates new instance of <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataTable" />.
+            </summary>
+      <param name="columns">The table columns.</param>
+      <param name="rows">The table rows.</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataTable.Columns">
+      <summary>
+            Gets table columns.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataTable.Rows">
+      <summary>
+            Gets table rows.
+            </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn">
+      <summary>
+            Data column.
+            </summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn.Name">
+      <summary>
+            Specifies column name.
+            </summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn.DataType">
+      <summary>
+            Specifies data type of the column.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn.#ctor(System.String,System.String)">
+      <summary>
+            Creates new instance of <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataColumn" />.
+            </summary>
+      <param name="name">The column name.</param>
+      <param name="dataType">The column type.</param>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataRow">
+      <summary>
+            Data row.
+            </summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataRow.Values">
+      <summary>
+            The row data.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataRow.#ctor(System.Object[])">
+      <summary>
+            Creates new instance of <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.DataRow" />.
+            </summary>
+      <param name="values">The row data.</param>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter">
+      <summary>
+            Represents a parameter used with a <see cref="T:System.Data.IDbCommand" />.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter.ParameterName">
+      <summary>
+            Gets or sets the name of the parameter.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter.Value">
+      <summary>
+            Gets or sets the value of the parameter.
+            </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameterCollection">
+      <summary>
+            Represents a collection of <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter" /> objects.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameterCollection.Add(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter)">
+      <summary>
+            Adds the specified <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter" /> object to the collection.
+            </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column">
+      <summary>
+            Defines a column.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column.#ctor(System.String,System.Type,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column" /> class.
+            </summary>
+      <param name="name">The column name.</param>
+      <param name="dataType">The column data type.</param>
+      <param name="isPrimaryKey">Whether the column is included to primary key.</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column.Name">
+      <summary>
+            The column name.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column.DataType">
+      <summary>
+            The column data type.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column.IsPrimaryKey">
+      <summary>
+            Whether the column is included to primary key.
+            </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema">
+      <summary>
+            Defines the data schema of database.
+            </summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema.Empty">
+      <summary>
+            Represents the empty data schema.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema.#ctor(System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table},System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey})">
+      <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema" /> class.
+            </summary>
+      <param name="tables">The tables collection.</param>
+      <param name="foreighKeys">The foreigh keys collection.</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema.Tables">
+      <summary>
+            The tables collection
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DataSchema.ForeignKeys">
+      <summary>
+            The foreight keys collection which has this table as source.
+            </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName">
+      <summary>
+            Defines the name of table.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.#ctor(System.String,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName" /> class.
+            </summary>
+      <param name="name">The name of table.</param>
+      <param name="schema">The schema name.</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.Name">
+      <summary>
+            The name of table.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.Schema">
+      <summary>
+            The schema name.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.ToString">
+      <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.Equals(System.Object)">
+      <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+      <param name="obj">The <see cref="T:System.Object" /> to compare with the current <see cref="T:System.Object" />.</param>
+      <returns>
+        <c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName.GetHashCode">
+      <summary>
+            Returns a hash code for this instance.
+            </summary>
+      <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey">
+      <summary>
+            Defines the foreigh key.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey.#ctor(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table,System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column},System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column})">
+      <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey" /> class.
+            </summary>
+      <param name="source">The source table.</param>
+      <param name="destination">The destination table.</param>
+      <param name="sourceColumns">The columns that defines a source.</param>
+      <param name="destinationColumns">The columnts that defines a destination.</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey.Source">
+      <summary>
+            The source table.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey.Destination">
+      <summary>
+            The destination table.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey.SourceColumns">
+      <summary>
+            The columns that defines a source.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.ForeignKey.DestinationColumns">
+      <summary>
+            The columnts that defines a destination.
+            </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table">
+      <summary>
+            Defines a table.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.#ctor(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.DbName,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.TableType,System.Collections.Generic.IEnumerable{GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Column})">
+      <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table" /> class.
+            </summary>
+      <param name="name">The name of the table.</param>
+      <param name="tableType">The table type.</param>
+      <param name="columns">The table colums collection.</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.Name">
+      <summary>
+            The name of table
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.TableType">
+      <summary>
+            The table type.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.Columns">
+      <summary>
+            The table colums collection.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.ToString">
+      <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.Equals(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table)">
+      <summary>
+            Returns a <see cref="T:System.Boolean" />. This is true if the specified Table is equal to the current Table; otherwise, false.
+            <param name="anotherTable">The table for comparison.</param></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.Equals(System.Object)">
+      <summary>
+            Returns a <see cref="T:System.Boolean" />. This is true if the specified Object is equal to the current Table; otherwise, false.
+            <param name="obj">The object for comparison.</param></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.GetHashCode">
+      <summary>
+            Returns a <see cref="T:System.Int32" /> that represents a hash code for the current object.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.op_Equality(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table)">
+      <summary>
+            Returns a <see cref="T:System.Boolean" />. This is true if the first Table is equal to the second Table; otherwise, false.
+            <param name="firstTable">The first table for comparison.</param><param name="secondTable">The second table for comparison.</param></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table.op_Inequality(GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.Table)">
+      <summary>
+            Returns a <see cref="T:System.Boolean" />. This is true if the first Table is not equal to the second Table; otherwise, false.
+            <param name="firstTable">The first table for comparison.</param><param name="secondTable">The second table for comparison.</param></summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.TableType">
+      <summary>
+            Defines enumeration of table types.
+            </summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.TableType.Table">
+      <summary>
+            Table
+            </summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.SchemaModel.TableType.View">
+      <summary>
+            View
+            </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.IItemCollection`1">
+      <summary>
+            Defines interface to readonly collection.
+            </summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.IQueryDesignerHost">
+      <summary>
+            Provides schema and methods for <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog" /></summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.IQueryDesignerHost.Schema">
+      <summary>
+            Gets the schema of the data source.
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.IQueryDesignerHost.ExecuteQuery(System.String,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter[],System.Int32)">
+      <summary>
+            Exeсutes specified query with specified parameters.
+            </summary>
+      <param name="query">The query to the data source.</param>
+      <param name="parameters">The query parameters.</param>
+      <param name="previewLimit">The row count to return.</param>
+      <returns>The query execution result.</returns>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.IQueryDesignerHost.ValidateQuery(System.String,GrapeCity.ActiveReports.QueryDesigner.Implementation.Data.IDataParameter[])">
+      <summary>
+            Validates specified query with specified parameters.
+            </summary>
+      <param name="query"></param>
+      <param name="parameters"></param>
+      <returns></returns>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryParameterInfo">
+      <summary>
+            Represents the parameter for query
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryParameterInfo.#ctor(System.String,System.Type)">
+      <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryParameterInfo" /> class
+            </summary>
+      <param name="name">Parameter name.</param>
+      <param name="type">Parameter type.</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryParameterInfo.Name">
+      <summary>
+            Gets or sets the name of the parameter
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryParameterInfo.Type">
+      <summary>
+            Gets or sets the type of the parameter
+            </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog">
+      <summary>
+            Query designer API.
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog.Query">
+      <summary>
+            Gets or sets SQL query
+            </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog.Parameters">
+      <summary>
+            Gets or sets parameters for SQL query
+            </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog.#ctor(GrapeCity.ActiveReports.QueryDesigner.Implementation.IQueryDesignerHost)">
+      <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog" /> class
+            </summary>
+      <param name="host"></param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.QueryDesigner.Implementation.QueryDesignerDialog.ShowDialog(System.Windows.Forms.Control,System.Boolean)">
+      <summary>
+            Shows the query designer dialog.
+            </summary>
+    </member>
+  </members>
+</doc>

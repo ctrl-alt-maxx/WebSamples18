@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MESCIUS.ActiveReports.Web.Design</name>
+    </assembly>
+    <members>
+        <member name="T:AssemblyNames">
+            <summary>
+            Contains strong assembly names and such
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.NuGetHelper">
+            <summary>
+            Allows to access to installed NuGet packages if any.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Design.NuGetHelper.PackageSuffix">
+            <summary>
+            Packages suffix if any (for example ".ja").
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Design.NuGetHelper.RepositoryKey">
+            <summary>
+            Repository key to access with NuGet API.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.NuGetHelper.IsNugetRegistryExists(System.String@)">
+            <summary>
+            Checks if NuGet repository really exists. 
+            </summary>
+            <param name="pathToPackages"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.AsaxEditor_SpecifyPath">
+            <summary>
+              Looks up a localized string similar to Specify the path to the directory with reports.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.CouldNotAddGlobalAsax">
+            <summary>
+              Looks up a localized string similar to ActiveReports could not add new global.asax or global.asax.cs file. Please search for &quot;Manually Configuring Web Samples&quot; in the help file for information on making the changes manually..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.CouldNotAddWebConfig">
+            <summary>
+              Looks up a localized string similar to ActiveReports could not add new web.config file. Please search for &quot;Manually Configuring Web Samples&quot; in the help file for information on making the changes manually..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.CouldNotEditGlobalAsax">
+            <summary>
+              Looks up a localized string similar to ActiveReports could not edit global.asax.cs file. Please search for &quot;Manually Configuring Web Samples&quot; in the help file for information on making the changes manually..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.CouldNotFindGlobalAsax">
+            <summary>
+              Looks up a localized string similar to ActiveReports could not find your global.asax or global.asax.cs file. Please search for &quot;Manually Configuring Web Samples&quot; in the help file for information on making the changes manually..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.CouldNotFindWebConfig">
+            <summary>
+              Looks up a localized string similar to ActiveReports could not find your web.config file. Please search for &quot;Manually Configuring Web Samples&quot; in the help file for information on making the changes manually..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.InvalidProjectExceptionMessage">
+            <summary>
+              Looks up a localized string similar to Unknown type of the project..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.NuGetPackageSuffix">
+            <summary>
+              Looks up a localized string similar to .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.WebViewerDesigner_HintAcrobatViewer">
+            <summary>
+              Looks up a localized string similar to (Requires Adobe Acrobat Reader to be installed on the client.).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.WebViewerDesigner_HintHtmlViewer">
+            <summary>
+              Looks up a localized string similar to (You must add the ActiveReports&apos; HttpHandlers to your web.config file for this ViewerType to work properly.  Please search for &quot;Manually Configuring Web Samples&quot; in the help index for information on the configuration process.).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.WebViewerDesigner_InvalidControl">
+            <summary>
+              Looks up a localized string similar to WebViewerDesigner must be used with WebViewer control..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.Resources.WebViewerDesigner_SpeicifyReport">
+            <summary>
+              Looks up a localized string similar to Use the ReportName property to specify a report for the viewer to display..
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.Tools.EmbeddedResourceManager">
+            <summary>Allows to load resource strings from main assembly instead of satellite assembly.</summary>
+            <remarks>For internal use.</remarks>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.Tools.EmbeddedResourceManager.InjectTo(System.Type)">
+            <summary>
+            Replaces default ResourceManager with the <see cref="T:GrapeCity.ActiveReports.Web.Design.Tools.EmbeddedResourceManager"/> in the specified class.
+            </summary>
+            <param name="resourceDesignerType">The resource's designer auto-generated class.</param>
+            <remarks>For internal use.</remarks>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.Tools.EmbeddedResourceManager.SatelliteAssemblyExists(System.Globalization.CultureInfo)">
+            <summary> Check if the satellite assembly exists and contains suitable resource. </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.Tools.ProjectExtensions.FindFile(EnvDTE.Project,System.String)">
+            <summary>
+            Does search for files with specified name.
+            Stops at first found, or if all nodes visited.
+            </summary>
+            <param name="project"></param>
+            <param name="fileName"></param>
+            <returns>Absolute path to file if found, null if not</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.Tools.ProjectExtensions.TryFindProjectItem(EnvDTE.Project,EnvDTE._DTE,System.String,System.String@)">
+            <summary>
+            Does search for item with specified name in the project items.
+            </summary>
+            <param name="project"></param>
+            <param name="itemName">Item name to search</param>
+            <param name="itemPath">Path to the item relative to the solution</param>
+            <returns>Is the item found</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.Tools.ProjectExtensions.VisitAllNonFolderProjectItems(EnvDTE.Project,System.Func{EnvDTE.ProjectItem,System.Boolean})">
+            <summary>
+            Recursively iterates over project contained items, and their children
+            and calls visitor on each non-folder item.
+            </summary>
+            <param name="projectToVisit"></param>
+            <param name="visitor"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.Tools.ProjectExtensions.VisitAllNonFolderProjectItems(EnvDTE.ProjectItems,System.Func{EnvDTE.ProjectItem,System.Boolean},System.Boolean@)">
+            <summary>
+            Recursively iterates over projectItems, and their children
+            and calls visitor on each non-folder item.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.Extensions">
+            <summary>
+            Some useful extensions
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.Extensions.Matches(System.Xml.XmlNode,GrapeCity.ActiveReports.Web.Design.IXmlNodeDescription)">
+            <summary>
+            True if node matches description, false otherwise
+            </summary>
+            <param name="node"></param>
+            <param name="description"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.Extensions.ReportError(EnvDTE._DTE,System.String)">
+            <summary>
+            Reports an web.config editing error in an IDE friendly mannor.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.GlobalAsaxEditor">
+            <summary>
+            Responsible for backend initialization in global.asax
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.GlobalAsaxEditor.FormatDocument(EnvDTE.ProjectItem)">
+            <summary>
+            Formats the document according to the current formatting settings in the VS.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.HttpHandlerDescription">
+            <summary>
+            Description of our HTTP Handler
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.IXmlNodeDescription.Name">
+            <summary>
+            Name of a node.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.IXmlNodeDescription.Attributes">
+            <summary>
+            Attributes with values of a node.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.LicensesLicxEditor">
+            <summary>
+            LicensesLicxEditor is used to find the licenses.licx file in the project containing the WebViewerDesigner 
+            and add any entries the WebViewer might need.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.LicensesLicxEditor.EditLicx(EnvDTE._DTE,EnvDTE.Project)">
+            <summary>
+            Edit licenses.licx.
+            </summary>
+            <param name="project">
+            The project to find the licenses.licx file/ProjectItem in.
+            </param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.LicensesLicxEditor.AddLicxEntry(EnvDTE.Project,System.String,System.String,System.String)">
+            <summary>
+            Adds new licx entry.
+            </summary>
+            <param name="project"></param>
+            <param name="licFilePath"></param>
+            <param name="assemblyName"></param>
+            <param name="licxEntry"></param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.Packages">
+            <summary> Gets the nuget and assemblies packages versions </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.WebConfigEditor">
+            <summary>
+            WebConfigEditor is used to find the web.config file in the project containing the WebViewerDesigner 
+            and add any entries the WebViewer might need.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebConfigEditor.EditConfig(EnvDTE._DTE,EnvDTE.Project,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Edit WebConfig.
+            </summary>
+            <param name="project">
+            The project to find the web.config file/ProjectItem in.
+            </param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebConfigEditor.ModifyWebConfig(EnvDTE._DTE,EnvDTE.Project,System.Xml.XmlDocument,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Modify WebConfig.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebConfigEditor.AddAssemblyReferences(EnvDTE._DTE,EnvDTE.Project,System.Xml.XmlDocument,System.Boolean,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Adds the required assembly references (like html export) to the web.config file under the following 
+            section: "configuration/system.web/compilation/assemblies".  Creates any required parent elements if they 
+            don't exist.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.XmlNodeDescription">
+            <summary>
+            Description of a XML node.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.XmlNodeDescription.Name">
+            <summary>
+            Name of a node.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.XmlNodeDescription.Attributes">
+            <summary>
+            Attributes with values of a node.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.WebReportObjectConverter">
+            <summary>
+            This component supports the ActiveReports.Web infrastructure and is not intended to be used directly from your code. 
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebReportObjectConverter.#ctor">
+            <summary>
+            Ctor.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebReportObjectConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Can we return a list of possible values for the prop list ?
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebReportObjectConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Return a list of possible values. 
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebReportObjectConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert the object to the specified type, using the specified context.
+            </summary>
+            <param name="context"></param>
+            <param name="destinationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebReportObjectConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the given value object to the specified type, using the specified context and culture information.
+            </summary>
+            <param name="context"></param>
+            <param name="culture"></param>
+            <param name="val"></param>
+            <param name="destinationType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.ICodeElementFilter">
+            <summary>
+            This component supports the ActiveReports.Web infrastructure and is not intended to be used directly from your code. 
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.CodeElementFilterType">
+            <summary>
+            This component supports the ActiveReports.Web infrastructure and is not intended to be used directly from your code. 
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.Design.CodeElementFilterType._fullTypeName">
+            <summary>
+            The fully qualified (namespace and type name) name of the type to filter.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.CodeElementFilterType.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the CodeElementFilterType class.
+            </summary>
+            <param name="fullTypeName">
+            The fully qualified (namespace and type name) name of the type the returned instance should filter.
+            </param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Design.WebViewerDesigner">
+            <summary>
+            This component supports the ActiveReports.Web infrastructure and is not intended to be used 
+            directly from your code. 
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebViewerDesigner.#ctor">
+            <summary>
+            Ctor.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebViewerDesigner.OnComponentChanged(System.Object,System.ComponentModel.Design.ComponentChangedEventArgs)">
+            <summary>
+            Called when the component changes.
+            </summary>
+            <param name="sender"></param>
+            <param name="ce"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebViewerDesigner.GetDesignTimeHtml">
+            <summary>
+            Returns the simple disgntime display but sizable.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebViewerDesigner.GetErrorDesignTimeHtml(System.Exception)">
+            <summary>
+            Gets a simple display when the control is in an erroneous state.
+            </summary>
+            <param name="exception"></param>
+            <returns></returns>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Design.WebViewerDesigner.AllowResize">
+            <summary>
+            Gets a value indicating whether the control can be resized in the design-time
+            environment.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Design.WebViewerDesigner.Initialize(System.ComponentModel.IComponent)">
+            <summary>
+            Initializes the designer and loads the specified component.
+            </summary>
+            <param name="component"></param>
+        </member>
+    </members>
+</doc>

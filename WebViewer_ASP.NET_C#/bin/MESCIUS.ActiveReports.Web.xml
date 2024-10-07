@@ -1,0 +1,1885 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MESCIUS.ActiveReports.Web</name>
+    </assembly>
+    <members>
+        <member name="T:GrapeCity.ActiveReports.Web.AnimationOptions">
+            <summary> Report viewer animation options. </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.AnimationOptions.LoadChart">
+            <summary> Gets or sets chart load animation options. </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.AnimationOptions.HoverChart">
+            <summary> Get or sets chart hover animation options. </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.AnimationOptions.HoverTable">
+            <summary> Gets or sets table hover animation options. </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.LoadChartAnimationOptions">
+            <summary> Chart load animation options. </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.LoadChartAnimationOptions.Enabled">
+            <summary> Enables or disables chart load animation. </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.HoverChartAnimationOptions">
+            <summary> Chat hover animation options. </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.HoverChartAnimationOptions.Enabled">
+            <summary> Enables or disables chart hover animation. </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.HoverTableAnimationOptions">
+            <summary> Table hover animation options. </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.HoverTableAnimationOptions.Enabled">
+            <summary> Enables or disables table hover animation. </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.HoverTableAnimationOptions.TextColor">
+            <summary> Gets or sets the table row text color which is hovered. </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:GrapeCity.ActiveReports.Web.HoverTableAnimationOptions.BackgroundColor" -->
+        <member name="T:GrapeCity.ActiveReports.Web.AssemblyNames">
+            <summary>
+            Contains strong assembly names and such
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.DescResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Categories_WebViewer">
+            <summary>
+              Looks up a localized string similar to WebViewer.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_AnimationOptions">
+            <summary>
+              Looks up a localized string similar to Animation options used on report preview..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_AnimationOptions_HoverChart_Enabled">
+            <summary>
+              Looks up a localized string similar to Enables or disables hover chart animation..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_AnimationOptions_HoverTable_BackgroundColor">
+            <summary>
+              Looks up a localized string similar to Specifies hover table background color..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_AnimationOptions_HoverTable_Enabled">
+            <summary>
+              Looks up a localized string similar to Enables or disables hover table animation..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_AnimationOptions_HoverTable_TextColor">
+            <summary>
+              Looks up a localized string similar to Specifies hover table text color..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_AnimationOptions_LoadChart_Enabled">
+            <summary>
+              Looks up a localized string similar to Enables or disables loadchart animation..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_AutoBackgroundColor">
+            <summary>
+              Looks up a localized string similar to  When true, view area background color is filled with report body color. Available only for dashboard reports..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_AvailableExports">
+            <summary>
+              Looks up a localized string similar to Restricts available export options..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_BoolDefaultExportSetting_Value">
+            <summary>
+              Looks up a localized string similar to Specifies default value for a boolean field. If equals null, JSViewer&apos;s default value will be used..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSetting_Visible">
+            <summary>
+              Looks up a localized string similar to Specifies if the field is visible..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_BaseDefaultSettings_FileName">
+            <summary>
+              Looks up a localized string similar to Specifies filename when file is downloaded..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_CsvDataExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `csvdata` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_CsvExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `csv` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_CsvExportSettings_ColumnsDelimeter">
+            <summary>
+              Looks up a localized string similar to Specifies the text inserted between columns..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_CsvExportSettings_DateTimeFormat">
+            <summary>
+              Looks up a localized string similar to Specifies the default format for date values, for example &apos;yyyy-MM-dd&apos;..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_CsvExportSettings_Encoding">
+            <summary>
+              Looks up a localized string similar to Specifies the encoding schema for output..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_CsvExportSettings_NoHeader">
+            <summary>
+              Looks up a localized string similar to Determines whether CSV Header should be omitted..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_CsvExportSettings_NumericFormat">
+            <summary>
+              Looks up a localized string similar to Specifies the default format for numeric values, for example &apos;0.####&apos;..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_CsvExportSettings_QuotationMode">
+            <summary>
+              Looks up a localized string similar to If AutoQuote than simple values will be exported without quotes. If AlwaysQuote than all exported values will always be quoted..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_CsvExportSettings_QuotationSymbol">
+            <summary>
+              Looks up a localized string similar to Specifies the qualifier character to put around results..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_CsvExportSettings_RowsDelimeter">
+            <summary>
+              Looks up a localized string similar to Specifies the text inserted between rows..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `doc` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocExportSettings_Author">
+            <summary>
+              Looks up a localized string similar to Specifies the name of the author that appears in the Author field of the Properties dialog in the rendered Word document (Page and RDL reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocExportSettings_BaseHref">
+            <summary>
+              Looks up a localized string similar to Specifies the base URL for any relative hyperlinks that appear in the Hyperlink base field of the Properties dialog in the rendered Word document (Page and RDL reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocExportSettings_Categories">
+            <summary>
+              Looks up a localized string similar to Specifies the categories for a document that appear in the Categories field of the Properties dialog in the rendered Word document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocExportSettings_Generator">
+            <summary>
+              Looks up a localized string similar to Specifies the identity of the document generator in the rendered Word document (Page and RDL reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocExportSettings_PageHeight">
+            <summary>
+              Looks up a localized string similar to Specifies the height of the report pages in inches for the rendered Word document. The value in this property overrides the original settings in the report (RDL reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocExportSettings_PageWidth">
+            <summary>
+              Looks up a localized string similar to Specifies the width of the report pages in inches for the rendered Word document. The value in this property overrides the original settings in the report (RDL reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocExportSettings_Title">
+            <summary>
+              Looks up a localized string similar to Specifies the title for a document that appears in the Title field of properties dialog in the rendered Word document (Page and RDL reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `docx` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_Author">
+            <summary>
+              Looks up a localized string similar to Specifies the name of the author that appears in the Author field of the Properties dialog in the rendered Word document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_Categories">
+            <summary>
+              Looks up a localized string similar to Specifies the categories for a document that appear in the Categories field of the Properties dialog in the rendered Word document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_CompanyName">
+            <summary>
+              Looks up a localized string similar to Specifies the name of the organization or company that appears in the Company field of Properties dialog in the rendered Word document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_DocumentCompatibilityVersion">
+            <summary>
+              Looks up a localized string similar to Specifies the compatibility mode of the document to the latest version (Microsoft Word 2013) or to previous versions (Microsoft Word 2007 - 2010) of Word..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_DpiX">
+            <summary>
+              Looks up a localized string similar to Specifies the horizontal resolution of the images in the rendered Word document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_DpiY">
+            <summary>
+              Looks up a localized string similar to Specifies the vertical resolution of the images in the rendered Word document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_Orientation">
+            <summary>
+              Looks up a localized string similar to Specifies a value that specifies whether the document pages should be printed in portrait or landscape in the rendered Word document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_PaperSize">
+            <summary>
+              Looks up a localized string similar to Specifies the paper size for the page..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_Password">
+            <summary>
+              Looks up a localized string similar to Specifies a password that must be provided to open the rendered Word document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_ReadOnlyRecommended">
+            <summary>
+              Looks up a localized string similar to Specifies a value that indicates whether Microsoft Office Word displays a message whenever a user opens the document, suggesting that the document is read-only..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_Title">
+            <summary>
+              Looks up a localized string similar to Specifies the title for a document that appears in the Title field of properties dialog in the rendered Word document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_TOCAutoUpdate">
+            <summary>
+              Looks up a localized string similar to Automatically updates the TableOfContents control while opening the Word document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_DocxExportSettings_WritePassword">
+            <summary>
+              Looks up a localized string similar to Specifies the write password that is required for saving changes in the rendered Word document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_JsonExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `json` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_JsonExportSettings_Formatted">
+            <summary>
+              Looks up a localized string similar to Specifies whether to format the output json text to be more readable..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_JsonExportSettings_QuotePropertyNames">
+            <summary>
+              Looks up a localized string similar to Specifies whether property names should be enclosed in quotation marks..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `mht` format (RDL and Page reports). .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_BookmarkStyle">
+            <summary>
+              Looks up a localized string similar to Set to Html to generate a page of bookmarks from the bookmarks in the report. If the report has no bookmarks, this setting is ignored (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_CharacterSet">
+            <summary>
+              Looks up a localized string similar to Select the IANA character set that you want to use in the meta tag in the header section of the HTML output. This property only takes effect if the IncludeHtmlHeader property is set to True (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_CreateFramesetPage">
+            <summary>
+              Looks up a localized string similar to Set to True to generate a set of frames that display a page of bookmarks (if available) in the left frame and the report document in the right frame. The HTML output uses the specified filename with the extension .frame.html (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_Fragment">
+            <summary>
+              Looks up a localized string similar to Determines whether or not the full html text will be returned or just the contents contained inside the body tag will be returned. True indicates only the content inside the body tag will be return; otherwise false (RDL and Page reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_IncludeHtmlHeader">
+            <summary>
+              Looks up a localized string similar to Set to False if you want to embed the HTML output in another HTML document. Otherwise, the HTML output includes the usual HTML, HEAD, and BODY elements (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_IncludePageMargins">
+            <summary>
+              Looks up a localized string similar to Set to True to include the report&apos;s margins in the HTML output (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_LinkTarget">
+            <summary>
+              Looks up a localized string similar to Specifies a link target to control whether drill down reports and other links open in a new window or reuse the current window. By default, no value is set and links open in the same window. A value of _blank opens the link in a new window, or you can specify a window using window_name (RDL and Page reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_Mode">
+            <summary>
+              Looks up a localized string similar to Galley mode renders the report in one HTML stream. Select Paginated mode to render each page as a section inside the HTML document. (RDL reports).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_MultiPage">
+            <summary>
+              Looks up a localized string similar to Set to True to create a separate HTML page for each page of the report. Otherwise, the HTML output is a single page (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_OutputTOC">
+            <summary>
+              Looks up a localized string similar to Indicates whether the report&apos;s existing TOC should be added in the output (RDL and Page reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_OutputType">
+            <summary>
+              Looks up a localized string similar to Set to LegacyHtml to use tables for positioning and avoid the use of cascading style sheets (CSS). Otherwise, positioning of controls is handled in the CSS (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_Pagination">
+            <summary>
+              Looks up a localized string similar to Indicates if pagination should be used for resulted html document or not (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_RemoveVerticalSpace">
+            <summary>
+              Looks up a localized string similar to Set to True if the OutputType property is set to LegacyHtml and you plan to print the output from a browser. This removes white space from the report to help improve pagination. Otherwise, vertical white space is kept intact (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_MhtExportSettings_Title">
+            <summary>
+              Looks up a localized string similar to Specifies the text to use in the header section&apos;s title. This is displayed in the title bar of the browser (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `pdf` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_Application">
+            <summary>
+              Looks up a localized string similar to Specifies the value that appears for application in the Document Properties dialog of the PDF viewer application (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_Author">
+            <summary>
+              Looks up a localized string similar to Enter the name of the author to appear in the Document Properties dialog of the PDF viewer application (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_ConvertMetaToPng">
+            <summary>
+              Looks up a localized string similar to Specifies whether Windows metafiles are converted to PNG files in the exported PDF document (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_EmbedFonts">
+            <summary>
+              Looks up a localized string similar to Select how the fonts used in the report should be embedded in the PDF document (Page and RDL reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_Encrypt">
+            <summary>
+              Looks up a localized string similar to Determines whether the document is encrypted or not (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_ExportBookmarks">
+            <summary>
+              Looks up a localized string similar to Set to True to generate bookmarks from the bookmarks in the report. If the report has no bookmarks, this setting is ignored (Section report)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_ImageInterpolation">
+            <summary>
+              Looks up a localized string similar to Interpolation value of images (Section report)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_ImageQuality">
+            <summary>
+              Looks up a localized string similar to Set to Highest in combination with a high value in the ImageResolution property to yield the best printing results when converting Windows metafiles (.wmf). Set to Lowest to keep the file size down. If the report has no metafiles, this setting is ignored (Section reports..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_Keywords">
+            <summary>
+              Looks up a localized string similar to Keywords associated with the document (all exports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_NeverEmbedFonts">
+            <summary>
+              Looks up a localized string similar to Sets a semicolon-delimited string of values indicating fonts that should not be embedded in a PDF document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_OwnerPassword">
+            <summary>
+              Looks up a localized string similar to The owner password that can be entered in the reader that permits full access to the document regardless of the specified user permissions (all exports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_Subject">
+            <summary>
+              Looks up a localized string similar to The subject of the document (all exports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_Title">
+            <summary>
+              Looks up a localized string similar to The title of the document (all exports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_UserPassword">
+            <summary>
+              Looks up a localized string similar to The user password that can be entered in the reader. If this value is left empty, the user will not be prompted for a password, however the user will be restricted by the specified permissions (all exports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_Version">
+            <summary>
+              Looks up a localized string similar to Specifies output PDF version (all exports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_WatermarkAngle">
+            <summary>
+              Looks up a localized string similar to The watermark angle (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_WatermarkColor">
+            <summary>
+              Looks up a localized string similar to The watermark color (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_WatermarkFontName">
+            <summary>
+              Looks up a localized string similar to The watermark font name (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_WatermarkFontSize">
+            <summary>
+              Looks up a localized string similar to The watermark font size (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_WatermarkFontStyle">
+            <summary>
+              Looks up a localized string similar to The watermark font style (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_WatermarkPrintOnly">
+            <summary>
+              Looks up a localized string similar to Specifies whether the watermark should appears only on printed pages (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_PdfExportSettings_WatermarkTitle">
+            <summary>
+              Looks up a localized string similar to The watermark text (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_RtfExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `rtf` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_RtfExportSettings_EnableShapes">
+            <summary>
+              Looks up a localized string similar to Set to true to export the Shapes and Lines to RTF Format..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_RtfExportSettings_Pagination">
+            <summary>
+              Looks up a localized string similar to Indicates if pagination should be used..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TiffExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `tiff` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TiffExportSettings_Compression">
+            <summary>
+              Looks up a localized string similar to Specifies compression scheme to be used (Page and RDL reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TiffExportSettings_CompressionScheme">
+            <summary>
+              Looks up a localized string similar to Specifies compression scheme to be used (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TiffExportSettings_Dither">
+            <summary>
+              Looks up a localized string similar to Set to True to dither the image when you save it to a black and white format (Ccitt3, Ccitt4 or Rle). This property has no effect if the CompressionScheme is set to Lzw or None (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TiffExportSettings_DpiX">
+            <summary>
+              Looks up a localized string similar to The horizontal resolution of a report (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TiffExportSettings_DpiY">
+            <summary>
+              Looks up a localized string similar to The vertical resolution of a report (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TiffExportSettings_Pagination">
+            <summary>
+              Looks up a localized string similar to Set to true if you want each page of a report to be rendered as a separate image, to false if you want the report to be rendered as a single image (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TxtExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `txt` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TxtExportSettings_Encoding">
+            <summary>
+              Looks up a localized string similar to Specifies an enumerated system encoding value to use for character encoding..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TxtExportSettings_PageDelimiter">
+            <summary>
+              Looks up a localized string similar to Specifies a character or sequence of characters to mark the end of each page..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TxtExportSettings_QuotationMode">
+            <summary>
+              Looks up a localized string similar to If AutoQuote than simple values will be exported without quotes. If AlwaysQuote than all exported values will always be quoted..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TxtExportSettings_QuotationSymbol">
+            <summary>
+              Looks up a localized string similar to Specifies a character to use as quotation mark in the exported text file. Only fields with delimiter characters are quoted..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TxtExportSettings_SuppressEmptyLines">
+            <summary>
+              Looks up a localized string similar to Set to False if you want to keep empty lines in the exported text file. Otherwise, white space is removed..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_TxtExportSettings_TextDelimiter">
+            <summary>
+              Looks up a localized string similar to Enter a character or sequence of characters to mark the end of each text field. This is mainly for use with CSV files that you open in Excel..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `xls` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_AutoRowHeight">
+            <summary>
+              Looks up a localized string similar to True if Excel should set the height of the row based on the contents of that row.  Otherwise Active Reports will calculate the height of the rows (Section reports only)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_DisplayGridLines">
+            <summary>
+              Looks up a localized string similar to Specifies if grid lines will be displayed (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_EnableToggles">
+            <summary>
+              Looks up a localized string similar to Allows to export collapsible rows in the detail and row groups of the Table control (RDL reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_FileFormat">
+            <summary>
+              Looks up a localized string similar to Specifies format for the output file (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_LayoutMode">
+            <summary>
+              Looks up a localized string similar to Specifies if output should be paginated (RDL reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_MultiSheet">
+            <summary>
+              Looks up a localized string similar to Indicates whether to generate single-sheet or multisheet document (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_Orientation">
+            <summary>
+              Looks up a localized string similar to Specifeis the print orientation of Excel sheet (all reports). .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_Pagination">
+            <summary>
+              Looks up a localized string similar to Specifies if output should be paginated (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_PaperSize">
+            <summary>
+              Looks up a localized string similar to Specifies the paper size for the page (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_Password">
+            <summary>
+              Looks up a localized string similar to Specifies a password that must be provided to open the rendered Excel document (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_ProtectedBy">
+            <summary>
+              Looks up a localized string similar to Specifies the User Name responsible to password protect the excel spreadsheet (all reports). .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_ReadOnlyRecommended">
+            <summary>
+              Looks up a localized string similar to Specifies the value to indicate if the Excel file was saved as read only recommended (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_RightToLeft">
+            <summary>
+              Looks up a localized string similar to Specifies direction of sheets from right to left (RDL and Page reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_SheetName">
+            <summary>
+              Looks up a localized string similar to Specifies a value indicating the name of sheet (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_UseDefaultPalette">
+            <summary>
+              Looks up a localized string similar to Specifies whether export document with Excel default palette (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsExportSettings_WritePassword">
+            <summary>
+              Looks up a localized string similar to Specifies the write password of the Excel file (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxDataExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `xlsxdata` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxDataExportSettings_AllowImages">
+            <summary>
+              Looks up a localized string similar to Specifies whether to render images or not..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxDataExportSettings_Author">
+            <summary>
+              Looks up a localized string similar to Specifies the name of the author that appears in the Author field of the Properties dialog in the rendered Excel document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxDataExportSettings_AutoRowsHeight">
+            <summary>
+              Looks up a localized string similar to True if Excel should set the height of the row based on the contents of that row.  Otherwise Active Reports will calculate the height of the rows..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxDataExportSettings_Categories">
+            <summary>
+              Looks up a localized string similar to Specifies the categories for a document that appear in the Categories field of the Properties dialog in the rendered Excel document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxDataExportSettings_OpenXmlStandard">
+            <summary>
+              Looks up a localized string similar to Specifies OpenXmlStandard of the output file..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxDataExportSettings_Title">
+            <summary>
+              Looks up a localized string similar to Specifies the title for a document that appears in the Title field of the Properties dialog in the rendered Excel document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxDataExportSettings_UseCompression">
+            <summary>
+              Looks up a localized string similar to Specifies whether compression should be used..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `xlsx` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxExportSettings_Author">
+            <summary>
+              Looks up a localized string similar to Specifies the name of the author that appears in the Author field of the Properties dialog in the rendered Excel document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxExportSettings_Categories">
+            <summary>
+              Looks up a localized string similar to Specifies the categories for a document that appear in the Categories field of the Properties dialog in the rendered Excel document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxExportSettings_OpenXmlStandard">
+            <summary>
+              Looks up a localized string similar to Specifies OpenXmlStandard of the output file (Section reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxExportSettings_OutputFormat">
+            <summary>
+              Looks up a localized string similar to Specifies OpenXmlStandard of the output file (RDL and Page reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxExportSettings_Title">
+            <summary>
+              Looks up a localized string similar to Specifies the title for a document that appears in the Title field of the Properties dialog in the rendered Excel document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XlsxExportSettings_UseCompression">
+            <summary>
+              Looks up a localized string similar to Specifies whether compression should be used (all reports)..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XmlExportSettings">
+            <summary>
+              Looks up a localized string similar to Default export panel values for `xml` format. .
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DefaultExportSettings_XmlExportSettings_Encoding">
+            <summary>
+              Looks up a localized string similar to Specifies the encoding schema to use in the XML transformation..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_DisplayMode">
+            <summary>
+              Looks up a localized string similar to Determines the way of showing pages that will be used by this viewer. In the single page mode the viewer shows only one page. In the continuous pages mode the viewer shows sequence of pages. Applicable for HtmlViewer type only..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_EnumDefaultExportSetting_Value">
+            <summary>
+              Looks up a localized string similar to Specifies default value for a enum field. If equals null, JSViewer&apos;s default value will be used..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_InitialZoom_Mode">
+            <summary>
+              Looks up a localized string similar to The initial zoom mode of the WebViewer..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_InitialZoom_Percentage">
+            <summary>
+              Looks up a localized string similar to The initial zoom value in percentage of the WebViewer..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_IntDefaultExportSetting_Value">
+            <summary>
+              Looks up a localized string similar to Specifies default value for a integer field. If equals null, JSViewer&apos;s default value will be used..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_LocaleURI">
+            <summary>
+              Looks up a localized string similar to Specifies the URI of a file containing localization strings..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PageView">
+            <summary>
+              Looks up a localized string similar to Defines horizontal alignment and view for report page like part of the WebPage or &apos;paper view&apos;..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PageView_HorizontalAlignment">
+            <summary>
+              Looks up a localized string similar to Specifies page horizontal alignment..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PageView_ViewMode">
+            <summary>
+              Looks up a localized string similar to Specifies how the report page is shown inside the viewer..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_ParametersPanel_Location">
+            <summary>
+              Looks up a localized string similar to The location of the parameters panel in the WebViewer window..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_ParametersPanel_Open">
+            <summary>
+              Looks up a localized string similar to The opening mode of the parameters panel in the WebViewer window..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions">
+            <summary>
+              Looks up a localized string similar to Export options used when exporting to an PDF-based viewer type..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_Application">
+            <summary>
+              Looks up a localized string similar to Specifies the Application used to produce the PDF when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_ApplicationName">
+            <summary>
+              Looks up a localized string similar to ActiveReports 18.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_Author">
+            <summary>
+              Looks up a localized string similar to Specifies the Author of the PDF when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_CenterWindow">
+            <summary>
+              Looks up a localized string similar to Specifies If the export should include the CenterWindow flag in the PDF document when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_ConvertMetaToPng">
+            <summary>
+              Looks up a localized string similar to Specifies if the PDF Export should convert WMF/EMF images into PNG for the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_DisplayMode">
+            <summary>
+              Looks up a localized string similar to Specifies the PDF DisplayMode when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_DisplayTitle">
+            <summary>
+              Looks up a localized string similar to Specifies the PDF DisplayTitle when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_DocumentToAddAfterReport">
+            <summary>
+              Looks up a localized string similar to Specifies the path to the PDF document that should be inserted to the end of the rendering output..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_DocumentToAddBeforeReport">
+            <summary>
+              Looks up a localized string similar to Specifies the path to the PDF document that should be inserted to the beginning of the rendering output..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_Encrypt">
+            <summary>
+              Looks up a localized string similar to Specifies if the export should encrypt the PDF when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_EndPage">
+            <summary>
+              Looks up a localized string similar to Specifies the last page of the report to render..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_ExportBookmarks">
+            <summary>
+              Looks up a localized string similar to Specifies if the PDF Export should export bookmarks for the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_FileName">
+            <summary>
+              Looks up a localized string similar to Get/sets name of exported file.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_FitWindow">
+            <summary>
+              Looks up a localized string similar to Specifies if the export should use the FitWindow flag when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_FontFallback">
+            <summary>
+              Looks up a localized string similar to Gets or sets a comma-delimited string of font families that will be used to lookup glyphs missing in original font.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_HideMenubar">
+            <summary>
+              Looks up a localized string similar to Specifies if the export should use the hideMenubar flag when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_HideToolbar">
+            <summary>
+              Looks up a localized string similar to Specifies if the export should use the HideToolbar flag when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_HideWindowUI">
+            <summary>
+              Looks up a localized string similar to Specifies if the export should use the HideWindowUI flag when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_ImageInterpolation">
+            <summary>
+              Looks up a localized string similar to Allows to enable/disable image interpolation, when exporting the file to PDF..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_ImageQuality">
+            <summary>
+              Looks up a localized string similar to Specifies the ImageQuality the PDF Export should use for the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_ImageResolution">
+            <summary>
+              Looks up a localized string similar to Specifies the ImageResolution the PDF Export should use for the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_Keywords">
+            <summary>
+              Looks up a localized string similar to Specifies the Keywords the export will embed in the PDF when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_MarginBottom">
+            <summary>
+              Looks up a localized string similar to Specifies the bottom margin value, in inches, to set for the report..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_MarginLeft">
+            <summary>
+              Looks up a localized string similar to Specifies the left margin value, in inches, to set for the report..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_MarginRight">
+            <summary>
+              Looks up a localized string similar to Specifies the right margin value, in inches, to set for the report..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_MarginTop">
+            <summary>
+              Looks up a localized string similar to Specifies the top margin value, in inches, to set for the report..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_NeverEmbedFonts">
+            <summary>
+              Looks up a localized string similar to Specifies the fonts the PDF Export should not embed for the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_OnlyForPrint">
+            <summary>
+              Looks up a localized string similar to Gets or sets a value indicating whether the PDF is only for print..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_OwnerPassword">
+            <summary>
+              Looks up a localized string similar to Specifies the PDF Owner&apos;s password when using the PDF Viewer type and the Encrypt property is set to true..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_PageHeight">
+            <summary>
+              Looks up a localized string similar to Specifies the page height value, in inches, to set for the report..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_PageWidth">
+            <summary>
+              Looks up a localized string similar to Specifies the page width value, in inches, to set for the report..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_Pagination">
+            <summary>
+              Looks up a localized string similar to Indicates if pagination should be used..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_PdfReExclusiveSettings">
+            <summary>
+              Looks up a localized string similar to PDF RE exclusive options.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_PdfWatermarkSettings">
+            <summary>
+              Looks up a localized string similar to PDF Watermark settings.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_Permissions">
+            <summary>
+              Looks up a localized string similar to Specifies the PDF permissions when using the PDF Viewer type and the Encrypt property is set to true..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_PrintLayoutMode">
+            <summary>
+              Looks up a localized string similar to Specifies the layout mode to be used for PDF document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_PrintPresets">
+            <summary>
+              Looks up a localized string similar to PDF Print Presets.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_PrintPresets_DuplexMode">
+            <summary>
+              Looks up a localized string similar to Specifies Printer duplex option. For best results, the selected printer should support duplex printing if you select a duplex option..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_PrintPresets_NumberOfCopies">
+            <summary>
+              Looks up a localized string similar to Prepopulates the Copies box in the Print dialog box..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_PrintPresets_PageScaling">
+            <summary>
+              Looks up a localized string similar to Specifies the Page Scaling..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_PrintPresets_PaperSourceByPageSize">
+            <summary>
+              Looks up a localized string similar to Uses the PDF page size to determine the output tray rather than the page setup option..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_PrintPresets_PrintPageRange">
+            <summary>
+              Looks up a localized string similar to Prepopulates the Pages box in the Print Range section of the Print dialog box with the page ranges you enter here..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_SizeToFit">
+            <summary>
+              Looks up a localized string similar to Specifies a value indicating whether PDF pages are fit to the selected paper size or not..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_StartPage">
+            <summary>
+              Looks up a localized string similar to Specifies the first page of the report to render..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_Subject">
+            <summary>
+              Looks up a localized string similar to Specifies the Subject the export will use when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_Title">
+            <summary>
+              Looks up a localized string similar to Specifies the Title the export will use when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_UserPassword">
+            <summary>
+              Looks up a localized string similar to Specifies the PDF User&apos;s password when using the PDF Viewer type and the Encrypt property is set to true..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_Version">
+            <summary>
+              Looks up a localized string similar to Specifies the PDF Version to use when using the PDF Viewer type..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_WatermarkAngle">
+            <summary>
+              Looks up a localized string similar to Specifies the watermark angle for PDF document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_WatermarkColor">
+            <summary>
+              Looks up a localized string similar to Specifies the watermark color for PDF document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_WatermarkFontName">
+            <summary>
+              Looks up a localized string similar to Specifies the watermark font name for PDF document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_WatermarkFontSize">
+            <summary>
+              Looks up a localized string similar to Specifies the watermark font size for PDF document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_WatermarkFontStyle">
+            <summary>
+              Looks up a localized string similar to Specifies the watermark font style for PDF document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_WatermarkPrintOnly">
+            <summary>
+              Looks up a localized string similar to Specifies whether the watermark for a PDF document should appears only on printed pages..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_PdfExportOptions_WatermarkTitle">
+            <summary>
+              Looks up a localized string similar to Specifies the watermark title for PDF document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_RenderFormat">
+            <summary>
+              Looks up a localized string similar to Set up the render format for a report..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_RenderMode">
+            <summary>
+              Looks up a localized string similar to Determines the way of rendering that will be used by this viewer. Galley mode renders the report in one HTML stream. Select Paginated mode to render each page as a section inside the HTML document..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_Report">
+            <summary>
+              Looks up a localized string similar to The report to be displayed in the viewer..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_ReportService">
+            <summary>
+              Looks up a localized string similar to The report service settings..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_ReportServiceSecurityToken">
+            <summary>
+              Looks up a localized string similar to The security token of the reporting service to WebViewer be connected to..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_ReportServiceUrl">
+            <summary>
+              Looks up a localized string similar to The url of the reporting service to WebViewer be connected to..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_ReportsFolder">
+            <summary>
+              Looks up a localized string similar to Specifies the path to search for requested report files..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_StringDefaultExportSetting_Value">
+            <summary>
+              Looks up a localized string similar to Specifies default value for a string field..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_ViewerType">
+            <summary>
+              Looks up a localized string similar to Determines the type of viewer that will be used to show the report in the client machines browser..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.DescResources.Properties_WebViewer">
+            <summary>
+              Looks up a localized string similar to ActiveReports WebViewer.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Editors.FlagEnumUiEditor">
+            <summary>
+            UITypeEditor for flag enums
+            This implementation has taken from http://www.codeproject.com/Articles/13793/A-UITypeEditor-for-easy-editing-of-flag-enum-prope
+            with minor refactoring
+            FOR INTERNAL USE ONLY
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Editors.FlagEnumUiEditor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GrapeCity.ActiveReports.Web.Editors.FlagEnumUiEditor"/> class.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Editors.FlagEnumUiEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Edits the specified object's value using the editor style indicated by the <see cref="M:System.Drawing.Design.UITypeEditor.GetEditStyle" /> method.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that can be used to gain additional context information.</param>
+            <param name="provider">An <see cref="T:System.IServiceProvider" /> that this editor can use to obtain services.</param>
+            <param name="value">The object to edit.</param>
+            <returns>The new value of the object. If the value of the object has not changed, this should return the same object it was passed.</returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Editors.FlagEnumUiEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Gets the editor style used by the <see cref="M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)" /> method.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that can be used to gain additional context information.</param>
+            <returns>A <see cref="T:System.Drawing.Design.UITypeEditorEditStyle" /> value that indicates the style of editor used by the <see cref="M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)" /> method. If the <see cref="T:System.Drawing.Design.UITypeEditor" /> does not support this method, then <see cref="M:System.Drawing.Design.UITypeEditor.GetEditStyle" /> will return <see cref="F:System.Drawing.Design.UITypeEditorEditStyle.None" />.</returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Editors.FlagCheckedListBox">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Editors.FlagCheckedListBoxItem">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.ReportNotFoundException">
+            <summary>
+            Thrown when a request is made for a report that cannot be found.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.ActiveReportsWebCacheException">
+            <summary>
+            Thrown when an exception occurs while working with web cache.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.JsonNotFoundException">
+            <summary>
+            Thrown when the json file cannot be found.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.LocalizationNotFoundException">
+            <summary>
+            Thrown when the localization file cannot be found.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Implementation.ReportResolver.GetSectionReportType(System.String)">
+            <summary>
+            Get code-based type
+            </summary>
+            <param name="typeName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Implementation.ReportResolver.EmbeddedResourceLocator">
+            <summary>
+            Allows to get related report resources embedded in assembly.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Implementation.ReportResolver.LinkResourceLocator">
+            <summary>
+            Allows to get related report resources by link.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Implementation.FileStreamResolver">
+            <summary>
+            Retrieves stream from file ("file:&lt;reportsfolder/reportname&gt;"). Allows relative paths.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Implementation.LinkStreamResolver">
+            <summary>
+            Retrieves stream from network location ("link:&lt;reportname&gt;").
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Implementation.ResourceStreamResolver">
+            <summary>
+            Retrieves stream from assembly resources ("res:&lt;reportname&gt;")
+            </summary>
+            <remarks>Only works in web application projects because web site projects generates separate assemblies on each page</remarks>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.InvariantResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.InvariantResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.InvariantResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.PageViewOptions">
+            <summary> Report viewer page view options. </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.PageViewOptions.HorizontalAlignment">
+            <summary> Specifies page horizontal alignment. </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.PageViewOptions.ViewMode">
+            <summary> Specifies how the report page is shown inside the viewer. </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.PageHorizontalAlignment">
+            <summary> Page horizontal alignment. </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.PageHorizontalAlignment.Left">
+            <summary> Forces page to align to the left side of the viewer. </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.PageHorizontalAlignment.Center">
+            <summary> Forces page to be centered in the viewer. </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.PageHorizontalAlignment.Right">
+            <summary> Forces page to align to the right side of the viewer. </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.PageViewMode">
+            <summary> Page view modes. </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.PageViewMode.Standard">
+            <summary> The report page is shown on the virtual paper with gray area around. </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.PageViewMode.NoPaper">
+            <summary> There are no 'gray' area around. Report page is rendered as a part of web page. </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions">
+            <summary>
+            Export options used when exporting to an PDF-based viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.OnlyForPrint">
+            <summary>
+            Gets or sets a value indicating whether the PDF is only for print.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.Pagination">
+            <summary>
+            Gets or sets a value indicating whether the PDF is only for print.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.ConvertMetaToPng">
+            <summary>
+            Specifies if the PDF Export should convert WMF/EMF images into PNG for the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.ExportBookmarks">
+            <summary>
+            Specifies if the PDF Export should export bookmarks for the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.FileName">
+            <summary>
+            Specifies file name for exported .pdf document
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.ImageQuality">
+            <summary>
+            Specifies the ImageQuality the PDF Export should use for the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.ImageResolution">
+            <summary>
+            Specifies the ImageResolution the PDF Export should use for the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PrintPresets">
+            <summary>
+            Specifies the Print Presets the PDF Export should use for the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.NeverEmbedFonts">
+            <summary>
+            Specifies the fonts the PDF Export should not embed for the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.FontFallback">
+            <summary>
+            Gets or sets a comma-delimited string of font families that will be used to lookup glyphs missing in original font
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.Application">
+            <summary>
+            Specifies the Application used to produce the PDF when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.Author">
+            <summary>
+            Specifies the Author of the PDF when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.CenterWindow">
+            <summary>
+            Specifies If the export should include the CenterWindow flag in the PDF document when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.DisplayMode">
+            <summary>
+            Specifies the PDF DisplayMode when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.DisplayTitle">
+            <summary>
+            Specifies the PDF DisplayTitle when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.FitWindow">
+            <summary>
+            Specifies if the export should use the FitWindow flag when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.HideMenubar">
+            <summary>
+            Specifies if the export should use the hideMenubar flag when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.HideToolbar">
+            <summary>
+            Specifies if the export should use the HideToolbar flag when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.HideWindowUI">
+            <summary>
+            Specifies if the export should use the HideWindowUI flag when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.Keywords">
+            <summary>
+            Specifies the Keywords the export will embed in the PDF when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.Subject">
+            <summary>
+            Specifies the Subject the export will use when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.Title">
+            <summary>
+            Specifies the Title the export will use when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.Encrypt">
+            <summary>
+            Specifies if the export should encrypt the PDF when using the PDF Viewer type
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.OwnerPassword">
+            <summary>
+            Specifies the PDF Owner's password when using the PDF Viewer type and the Encrypt property is set to true.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.Permissions">
+            <summary>
+            Specifies the PDF permissions when using the PDF Viewer type and the Encrypt property is set to true.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.Use128Bit">
+            <summary>
+            Specifies if the export should use 128Bit encryption when using the PDF Viewer type and the Encrypt property is set to true.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.UserPassword">
+            <summary>
+            Specifies the PDF User's password when using the PDF Viewer type and the Encrypt property is set to true.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.Version">
+            <summary>
+            Specifies the PDF Version to use when using the PDF Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.Watermark">
+            <summary>
+            Specifies the PDF watermark settings
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfWatermarkSettings.Angle">
+            <summary>
+            Specifies the watermark angle for PDF document.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfWatermarkSettings.Text">
+            <summary>
+            Specifies the watermark title for PDF document.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfWatermarkSettings.Color">
+            <summary>
+            Specifies the watermark color for PDF document.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfWatermarkSettings.FontName">
+            <summary>
+            Specifies the watermark font name for PDF document.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfWatermarkSettings.FontSize">
+            <summary>
+            Specifies the watermark font size for PDF document.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfWatermarkSettings.FontStyle">
+            <summary>
+            Specifies the watermark font style for PDF document.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfWatermarkSettings.PrintOnly">
+            <summary>
+            Specifies whether the watermark for a PDF document should appears only on printed pages.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveSettings">
+            <summary>
+            Specifies the PDF RE exclusive options
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.DocumentToAddAfterReport">
+            <summary>
+            Specifies the path to the PDF document that should be inserted to the end of the rendering output (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.DocumentToAddBeforeReport">
+            <summary>
+            Specifies the path to the PDF document that should be inserted to the beginning of the rendering output (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.StartPage">
+            <summary>
+            Specifies the first page of the report to render (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.EndPage">
+            <summary>
+            Specifies the last page of the report to render (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.ImageInterpolation">
+            <summary>
+            Allows to enable/disable image interpolation, when exporting the file to PDF (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.MarginLeft">
+            <summary>
+            Specifies the left margin value, in inches, to set for the report (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.MarginRight">
+            <summary>
+            Specifies the right margin value, in inches, to set for the report (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.MarginTop">
+            <summary>
+            Specifies the top margin value, in inches, to set for the report (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.MarginBottom">
+            <summary>
+            Specifies the bottom margin value, in inches, to set for the report (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.PageHeight">
+            <summary>
+            Specifies the page height value, in inches, to set for the report (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.PageWidth">
+            <summary>
+            Specifies the page width value, in inches, to set for the report (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.PrintLayoutMode">
+            <summary>
+            Specifies the layout mode to be used for PDF document (PDF RE).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.ExportOptions.PdfExportOptions.PdfReExclusiveOptions.SizeToFit">
+            <summary>
+            Specifies a value indicating whether PDF pages are fit to the selected paper size or not (PDF RE).
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.ReportingMiddleware.Configure(System.Web.HttpApplication,GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.ReportingServices,System.String)">
+            <summary>
+            Configures reporting backend and registers http api.
+            </summary>
+            <param name="app"></param>
+            <param name="config"></param>
+            <param name="prefix"></param>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Resources.Errors_LocalizationNotAvailable">
+            <summary>
+              Looks up a localized string similar to Localization is not available: {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Resources.Errors_ReportNotAvailable">
+            <summary>
+              Looks up a localized string similar to Report is not available: {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Resources.Errors_ReportTypeIsUnknown">
+            <summary>
+              Looks up a localized string similar to Report type is unknown: {0}.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Resources.Errors_WebCache">
+            <summary>
+              Looks up a localized string similar to An error occurred in the ActiveReports Web Cache..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Resources.Errors_WebCacheKeyGenerating">
+            <summary>
+              Looks up a localized string similar to Error generating web cache key. See inner exception for details..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Resources.Messages_Rendering">
+            <summary>
+              Looks up a localized string similar to Rendering....
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Resources.WebViewerExceptions_LastPageLessStartPage">
+            <summary>
+              Looks up a localized string similar to EndPage should be greater than or equal to StartPage, or 0..
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Resources.WebViewerExceptions_StartPageOverEndPage">
+            <summary>
+              Looks up a localized string similar to StartPage should be less than or equal to EndPage, or 0..
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Tools.CategoryResAttribute">
+            <summary>
+            WebCategoryAttribute overrides and provides an implementation of the CategoryAttribute class's GetLocalizedString method.
+            This class aids in localizing.
+            The key provided will be prefixed with by this class "Category_", so all Category strings in the strings.resx should be prefixed with "Category_".
+            The Category_Prefix is used due to the CategoryAttribute.GetLocalizedString function.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Tools.CategoryResAttribute.#ctor(System.String)">
+            <summary>
+            The Category the property should be in.
+            </summary>
+            <param name="category"></param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Tools.CategoryResAttribute.GetLocalizedString(System.String)">
+            <summary>
+            Returns the localized Category string.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.Tools.DescriptionRes">
+            <summary>
+            base class for Description Attribute
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.Tools.DescriptionRes.Description">
+            <summary>
+            Description for Resource
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Tools.PageExtensions.RegisterJsViewer(System.Web.UI.Page,GrapeCity.ActiveReports.Web.ViewerType,System.Boolean)">
+            <summary>
+            Registers the jsViewer script and stylesheet in the head section.
+            </summary>
+            <param name="page">The page to which jsViewer will be added.</param>
+            <param name="viewerType">Viewer type.</param>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.Tools.PageExtensions.CreateAndAdd``1(System.Web.UI.HtmlControls.HtmlHead,System.String)">
+            <summary>
+            Creates and registers an html control in the page header.  
+            </summary>
+            <param name="head">The page header to which the html control will be added.</param>
+            <param name="resourceName">The fully qualified name of the resource in the assembly. </param>
+            <typeparam name="T">HTML control type.</typeparam>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.WebHostBuilderExtensions">
+            <summary>
+            Contains methods for configuring of web host application.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.WebHostBuilderExtensions.UseReporting(System.Web.HttpApplication,System.Action{GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings})">
+            <summary>
+            Configures middleware for ActiveReports API and handlers.
+            </summary>
+            <param name="builder"></param>
+            <param name="configure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.WebHostBuilderExtensions.UseProxyReportStore(GrapeCity.ActiveReports.Aspnetcore.Viewer.ReportingSettings)">
+            <summary>
+            Use 'proxy' report templates store to allow defining reports not only by report name, but also by report object.
+            </summary>
+            <param name="settings">Initial user settings.</param>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.PageView">
+            <summary> Specifies page view options. </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.Animation">
+            <summary> Specifies animation options. </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.PdfExportOptions">
+            <summary>
+            Specifies the PDF Export options to be used with exporting with the Adobe Acrobat Viewer type.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.DisplayMode">
+            <summary>
+            The way of the showing of the rendered pages. For 'HtmlViewer' viewer type only.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.AutoBackgroundColor">
+            <summary>
+            When true, view area background color is filled with report body color. Available only for dashboard reports.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.ReportService">
+            <summary>
+            The report service settings (like URL and security token).
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.ParametersPanelLocation">
+            <summary>
+            The type of the parameters panel location.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.ParametersPanelOpen">
+            <summary>
+            The type of the parameters panel open mode.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.InitialZoomMode">
+            <summary>
+            Specifies the initial zoom mode.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.InitialZoomPercentage">
+            <summary>
+            Specifies the initial zoom value in percentage.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.ReportName">
+            <summary>
+            The identifier of the report to be loaded to the viewer control.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.Report">
+            <summary>
+            Specifies the report to display to the client.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.ReportsFolder">
+            <summary>
+            Specifies the path to search for requested report files, which name starts with "file:" prefix.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.ViewerType">
+            <summary>
+            Determines the type of viewer that will be used to show the report in the client machines browser.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.RenderMode">
+            <summary>
+            The configure way of rendering.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.RenderFormat">
+            <summary>
+            Set up the render format for a report.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.AvailableExports">
+            <summary>
+            The array of export types available via Export functionality of Viewer
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.DefaultExportSettings">
+            <summary>
+            The object containing custom default export settings. Use to set default value and visibility of any field in the export panel.
+            </summary>
+        </member>
+        <member name="P:GrapeCity.ActiveReports.Web.WebViewer.LocalizationJson">
+            <summary>
+            Specifies the URL of a file containing localization strings.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.WebViewer.GetJsViewerCreationScript(System.String)">
+            <summary>
+            Generates the js script that initializes the jsviewer instance with a given options. 
+            </summary>
+            <param name="webViewerId"></param>
+            <returns></returns>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.WebViewer.WEBVIEWERLICENSEKEY">
+            <summary>
+            This is the key we use in the HttpContext's Application collection to store and retrieve the License.
+            </summary>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.WebViewer.GetLicense(System.Type,System.Object)">
+            <summary>
+            Gets license.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GrapeCity.ActiveReports.Web.WebViewer.Dispose">
+            <summary>
+            Enables a server control to perform final clean up before it is released from memory.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.ViewerType">
+            <summary>
+            The different types of viewing options for the ActiveReports WebForms WebViewer sever control for ASP.NET.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.ViewerType.HtmlViewer">
+            <summary>
+            Provides a scrollable view of a single page of the report at a time.  Downloads only HTML and javascript to the client browser.
+            Not preferable for printable output.
+            Client Requirements: Internet Explorer 6 or above.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.ViewerType.RawHtml">
+            <summary>
+            Shows all pages in the report document as a single HTML continuous  page.
+            Provides a static view of the entire report document, and usually decent printable output, although under some circumstances, pagination is not preserved.  
+            Client Requirements: Internet Explorer 6 or above.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.ViewerType.AcrobatReader">
+            <summary>
+            Returns output as a PDF document viewable in Acrobat Reader.
+            Requirements: Adobe Acrobat Reader 5 or above.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.RenderMode">
+            <summary>
+            The different ways of rendering
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.RenderMode.Paginated">
+            <summary>
+            Page rendering
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.RenderMode.Galley">
+            <summary>
+            Rendering in galley mode
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.DisplayMode">
+            <summary>
+            The different ways of showing pages in viewer.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.DisplayMode.Single">
+            <summary>
+            Single page mode.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.DisplayMode.Continuous">
+            <summary>
+            Continuous pages mode.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.ParametersPanelLocation">
+            <summary>
+            The different types of the parameters panel location.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.ParametersPanelLocation.Default">
+            <summary>
+            Default panel location (left side).
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.ParametersPanelLocation.Top">
+            <summary>
+            Panel location at the top side.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.ParametersPanelOpen">
+            <summary>
+            The different types of the parameters panel opening.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.ParametersPanelOpen.Auto">
+            <summary>
+            Panel opens if required.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.ParametersPanelOpen.Always">
+            <summary>
+            Panel opens always.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.ZoomMode">
+            <summary>
+            The different modes of the initial zoom.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.ZoomMode.FitToWidth">
+            <summary>
+            Zoom to page width.
+            </summary>
+        </member>
+        <member name="F:GrapeCity.ActiveReports.Web.ZoomMode.FitToPage">
+            <summary>
+            Zoom to whole page.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Web.RenderFormat">
+            <summary>
+            Report render backend.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Implementation.CodeBasedService">
+            <summary>
+            Allows to get reports from any source using callback function.
+            </summary>
+        </member>
+        <member name="T:GrapeCity.ActiveReports.Aspnetcore.Viewer.Services.IReportsService">
+            <summary>
+            Allows to load rdl report definition from custom storage.
+            </summary>
+        </member>
+    </members>
+</doc>

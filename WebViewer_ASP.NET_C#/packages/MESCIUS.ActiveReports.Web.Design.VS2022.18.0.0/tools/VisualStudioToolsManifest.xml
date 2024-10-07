@@ -1,0 +1,7 @@
+<FileList>
+  <File Reference = "MESCIUS.ActiveReports.Web.Design.dll">
+    <ToolboxItems VSCategory="Web Viewer">
+      <Item Type="GrapeCity.ActiveReports.Web.Design.WebViewerDesigner" />
+    </ToolboxItems>
+  </File>
+</FileList>

@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "hsVuwhnGWtXSH6m7ze5uUxpiAYG92L4F/IJFdqze9oo=",
+  "Source": "ReportService",
+  "BasePath": "_content/ReportService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ReportService\\wwwroot",
+      "Source": "ReportService",
+      "ContentRoot": "C:\\Users\\maxxr\\Documents\\GitHub\\WebSamples18\\BlazorViewer\\ReportService\\wwwroot\\",
+      "BasePath": "_content/ReportService",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\maxxr\\Documents\\GitHub\\WebSamples18\\BlazorViewer\\ReportService\\wwwroot\\favicon.ico",
+      "SourceId": "ReportService",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\maxxr\\Documents\\GitHub\\WebSamples18\\BlazorViewer\\ReportService\\wwwroot\\",
+      "BasePath": "_content/ReportService",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\maxxr\\Documents\\GitHub\\WebSamples18\\BlazorViewer\\ReportService\\wwwroot\\index.html",
+      "SourceId": "ReportService",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\maxxr\\Documents\\GitHub\\WebSamples18\\BlazorViewer\\ReportService\\wwwroot\\",
+      "BasePath": "_content/ReportService",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}
